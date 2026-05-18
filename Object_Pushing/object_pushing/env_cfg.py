@@ -6,6 +6,7 @@ import isaaclab.sim as sim_utils
 import vrrobo_isaaclab.tasks.vrrobo.mdp as vr_mdp
 from isaaclab.assets import ArticulationCfg, AssetBaseCfg, RigidObjectCfg
 from isaaclab.envs import ManagerBasedRLEnvCfg
+from isaaclab.managers import CurriculumTermCfg as CurrTerm
 from isaaclab.managers import EventTermCfg as EventTerm
 from isaaclab.managers import ObservationGroupCfg as ObsGroup
 from isaaclab.managers import ObservationTermCfg as ObsTerm
@@ -44,15 +45,17 @@ class ObjectPushingSceneCfg(InteractiveSceneCfg):
     )
     robot: ArticulationCfg = MCLQUAD_SERIAL_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
     push_object = RigidObjectCfg(
-        prim_path="{ENV_REGEX_NS}/PushCube",
-        spawn=sim_utils.CuboidCfg(
-            size=(mdp.CUBE_SIZE, mdp.CUBE_SIZE, mdp.CUBE_SIZE),
+        prim_path="{ENV_REGEX_NS}/PushObject",
+        spawn=sim_utils.CylinderCfg(
+            radius=mdp.OBJECT_RADIUS,
+            height=mdp.OBJECT_HEIGHT,
+            axis="Z",
             rigid_props=sim_utils.RigidBodyPropertiesCfg(
                 disable_gravity=False,
                 retain_accelerations=False,
                 max_depenetration_velocity=1.0,
             ),
-            mass_props=sim_utils.MassPropertiesCfg(mass=1.0),
+            mass_props=sim_utils.MassPropertiesCfg(mass=mdp.OBJECT_MASS),
             collision_props=sim_utils.CollisionPropertiesCfg(collision_enabled=True),
             physics_material=sim_utils.RigidBodyMaterialCfg(
                 friction_combine_mode="multiply",
@@ -63,21 +66,23 @@ class ObjectPushingSceneCfg(InteractiveSceneCfg):
             visual_material=sim_utils.PreviewSurfaceCfg(diffuse_color=(0.05, 0.22, 0.85)),
         ),
         init_state=RigidObjectCfg.InitialStateCfg(
-            pos=(0.0, 0.0, mdp.CUBE_CENTER_Z),
+            pos=(0.0, 0.0, mdp.OBJECT_CENTER_Z),
             rot=(1.0, 0.0, 0.0, 0.0),
         ),
     )
     target_marker = RigidObjectCfg(
-        prim_path="{ENV_REGEX_NS}/TargetCube",
-        spawn=sim_utils.CuboidCfg(
-            size=(mdp.CUBE_SIZE, mdp.CUBE_SIZE, mdp.CUBE_SIZE),
+        prim_path="{ENV_REGEX_NS}/TargetObject",
+        spawn=sim_utils.CylinderCfg(
+            radius=mdp.OBJECT_RADIUS,
+            height=mdp.OBJECT_HEIGHT,
+            axis="Z",
             rigid_props=sim_utils.RigidBodyPropertiesCfg(kinematic_enabled=True, disable_gravity=True),
             mass_props=sim_utils.MassPropertiesCfg(mass=1.0),
             collision_props=sim_utils.CollisionPropertiesCfg(collision_enabled=False),
             visual_material=sim_utils.PreviewSurfaceCfg(diffuse_color=(0.0, 0.8, 0.25), opacity=0.25),
         ),
         init_state=RigidObjectCfg.InitialStateCfg(
-            pos=(2.0, 0.0, mdp.CUBE_CENTER_Z),
+            pos=(2.0, 0.0, mdp.OBJECT_CENTER_Z),
             rot=(1.0, 0.0, 0.0, 0.0),
         ),
     )
@@ -175,6 +180,8 @@ class CommandsCfg:
 @configclass
 class RewardsCfg:
     intrinsic = RewTerm(func=mdp.intrinsic_pushing_reward, weight=1.0)
+    front_push = RewTerm(func=mdp.front_push_reward, weight=3.0)
+    target_facing = RewTerm(func=mdp.target_facing_reward, weight=1.0)
     object_position = RewTerm(func=mdp.object_position_reward, weight=1.0)
     success_bonus = RewTerm(func=mdp.success_bonus, weight=1.0)
 
@@ -189,6 +196,16 @@ class TerminationsCfg:
 
 @configclass
 class EventCfg:
+    object_geometry = EventTerm(
+        func=mdp.randomize_pushing_object_geometry,
+        mode="prestartup",
+        params={
+            "diameter_range": mdp.OBJECT_DIAMETER_RANGE,
+            "height_range": mdp.OBJECT_HEIGHT_RANGE,
+            "object_cfg": SceneEntityCfg("push_object"),
+            "target_cfg": SceneEntityCfg("target_marker"),
+        },
+    )
     robot_physics_material = EventTerm(
         func=vr_mdp.randomize_rigid_body_material,
         mode="startup",
@@ -243,12 +260,27 @@ class EventCfg:
 
 @configclass
 class CurriculumCfg:
-    pass
+    spawn_distances = CurrTerm(
+        func=mdp.object_pushing_spawn_distance_curriculum,
+        params={
+            "steps_per_iteration": 40,
+            "iterations_per_level": 100,
+            "num_levels": 20,
+            "robot_radius_start_range": mdp.ROBOT_RADIUS_START_RANGE,
+            "robot_radius_end_range": mdp.ROBOT_RADIUS_END_RANGE,
+            "target_distance_start_range": mdp.TARGET_DISTANCE_START_RANGE,
+            "target_distance_end_range": mdp.TARGET_DISTANCE_END_RANGE,
+            "robot_lateral_start_range": mdp.ROBOT_LATERAL_START_RANGE,
+            "robot_lateral_end_range": mdp.ROBOT_LATERAL_END_RANGE,
+            "robot_yaw_noise_start_range": mdp.ROBOT_YAW_NOISE_START_RANGE,
+            "robot_yaw_noise_end_range": mdp.ROBOT_YAW_NOISE_END_RANGE,
+        },
+    )
 
 
 @configclass
 class MCLQuadObjectPushingEnvCfg(ManagerBasedRLEnvCfg):
-    scene: ObjectPushingSceneCfg = ObjectPushingSceneCfg(num_envs=300, env_spacing=8.0)
+    scene: ObjectPushingSceneCfg = ObjectPushingSceneCfg(num_envs=300, env_spacing=8.0, replicate_physics=False)
     observations: ObservationsCfg = ObservationsCfg()
     actions: ActionsCfg = ActionsCfg()
     commands: CommandsCfg = CommandsCfg()

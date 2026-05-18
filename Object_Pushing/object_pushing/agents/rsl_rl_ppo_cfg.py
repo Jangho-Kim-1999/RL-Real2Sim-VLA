@@ -9,7 +9,7 @@ class MCLQuadObjectPushingPPORunnerCfg(RslRlOnPolicyRunnerCfg):
     device = "cuda:0"
     num_steps_per_env = 40
     max_iterations = 10000
-    save_interval = 100
+    save_interval = 20
     experiment_name = "mclquad_object_pushing"
     empirical_normalization = False
     resume = False

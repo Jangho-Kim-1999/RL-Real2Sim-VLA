@@ -1,42 +1,19 @@
-# OS / editor
-.DS_Store
-.idea/
-.vscode/
+VR-Robo-main/vrrobo_isaaclab/vla_weights/
+VR-Robo-main/vrrobo_isaaclab/logs/
+VR-Robo-main/vrrobo_isaaclab/outputs/
 
-# Python
-**/__pycache__/
-**/*.py[cod]
-**/*.egg-info/
-**/.pytest_cache/
+VR-Robo-main/vrrobo_renderer/vr-robo-dataset.zip
+VR-Robo-main/vrrobo_renderer/vr-robo-dataset/
+VR-Robo-main/vrrobo_renderer/lounge-dataset/
 
-# Training / experiment outputs
-**/logs/
-**/outputs/
-**/output/
-**/runs/
-**/recordings/
-**/videos/
-**/wandb/
-**/.neptune/
-events.out.tfevents*
-**/events.out.tfevents*
-
-# Model weights / checkpoints
-**/vla_weights/
-**/*.safetensors
-**/*.ckpt
-**/*.pth
-**/*.pt
-
-# Generated datasets / large local assets
-**/vr-robo-dataset/
-**/lounge-dataset/
-**/*dataset.zip
-
-# Build artifacts
-**/build/
-_build/
-_repo/
-_isaac_sim*
-.lastformat
-*.tmp
+__pycache__/
+*.pyc
+3D_files/3DGUT_USDZ/video_r7.usdz
+3D_files/3DGUT_USDZ/r7_video_3fps_nurec.usdz
+3D_files/3DGUT_USDZ/export_pgsr_images_2_floorflat_recolor_nurec.usdz
+3D_files/3DGUT_USDZ/r7_images_nurec.usdz
+3D_files/3DGUT_USDZ/images_r7.usdz
+3D_files/lounge_colmap_pgsr/mesh/tsdf_fusion.ply
+3D_files/lounge_colmap_pgsr/mesh/tsdf_fusion_post.ply
+3D_files/lounge_colmap_pgsr/point_cloud/iteration_7000/point_cloud.ply
+3D_files/lounge_colmap_pgsr/point_cloud/iteration_30000/point_cloud.ply
