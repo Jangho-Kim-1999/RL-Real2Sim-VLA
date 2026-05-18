@@ -1,0 +1,42 @@
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+**/.pytest_cache/
+
+# Training / experiment outputs
+**/logs/
+**/outputs/
+**/output/
+**/runs/
+**/recordings/
+**/videos/
+**/wandb/
+**/.neptune/
+events.out.tfevents*
+**/events.out.tfevents*
+
+# Model weights / checkpoints
+**/vla_weights/
+**/*.safetensors
+**/*.ckpt
+**/*.pth
+**/*.pt
+
+# Generated datasets / large local assets
+**/vr-robo-dataset/
+**/lounge-dataset/
+**/*dataset.zip
+
+# Build artifacts
+**/build/
+_build/
+_repo/
+_isaac_sim*
+.lastformat
+*.tmp
