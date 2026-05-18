@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "fire_ext"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "fire_ext" (
+    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    prepend references = @../../../../3D_files/3DGUT_USDZ/fire_ext.usd@
+)
+{
+    bool physics:kinematicEnabled = 1
+    double physics:mass = 1
+}

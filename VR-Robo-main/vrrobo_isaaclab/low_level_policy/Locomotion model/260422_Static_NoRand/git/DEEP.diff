@@ -1,0 +1,260 @@
+--- git status ---
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   source/rl_training/rl_training/assets/MCLrobotics.py
+	modified:   source/rl_training/rl_training/tasks/locomotion/Env_runtime.py
+	modified:   source/rl_training/rl_training/tasks/locomotion/M_rewards.py
+	modified:   source/rl_training/rl_training/tasks/locomotion/config/MCL_Quad_serial/flat_env_cfg.py
+	modified:   source/rl_training/rl_training/tasks/locomotion/mdp/rewards.py
+
+no changes added to commit (use "git add" and/or "git commit -a") 
+
+
+--- git diff ---
+diff --git a/source/rl_training/rl_training/assets/MCLrobotics.py b/source/rl_training/rl_training/assets/MCLrobotics.py
+index 8bca5da..d7102f7 100644
+--- a/source/rl_training/rl_training/assets/MCLrobotics.py
++++ b/source/rl_training/rl_training/assets/MCLrobotics.py
+@@ -76,8 +76,8 @@ MCLQUAD_SERIAL_CFG = ArticulationCfg(
+             stiffness=0.0,
+             damping=0.0,
+             friction=0.0,
+-            armature= 2*Jm,
+-            viscous_friction= 2*Bm,
++            armature= Jm,
++            viscous_friction= Bm,
+         ),
+         "KNEE": ImplicitActuatorCfg(
+             joint_names_expr=[".*KNEE"],
+diff --git a/source/rl_training/rl_training/tasks/locomotion/Env_runtime.py b/source/rl_training/rl_training/tasks/locomotion/Env_runtime.py
+index ebb68ef..b9ec954 100644
+--- a/source/rl_training/rl_training/tasks/locomotion/Env_runtime.py
++++ b/source/rl_training/rl_training/tasks/locomotion/Env_runtime.py
+@@ -448,18 +448,20 @@ class RuntimeTorqueManagerBasedRLEnv(ManagerBasedRLEnv):
+             # )
+ 
+             tau_comp_hip = (
++                0
+                 # -self.Jm * ddq_raw[:, hip_ids]
+-                - self.Jm * ddq_raw[:, knee_ids]
++                # - self.Jm * ddq_raw[:, knee_ids]
+                 # - self.Bm * dq_raw[:, hip_ids]
+-                - self.Bm * dq_raw[:, knee_ids]
+-                - M11 * ddq_raw[:, hip_ids]
+-                - M12 * ddq_raw[:, knee_ids]
++                # - self.Bm * dq_raw[:, knee_ids]
++                # - M11 * ddq_raw[:, hip_ids]
++                # - M12 * ddq_raw[:, knee_ids]
+             )
+             tau_comp_knee = (
+-                - self.Jm * ddq_raw[:, hip_ids] 
+-                - self.Bm * dq_raw[:, hip_ids]
+-                - M22 * ddq_raw[:, knee_ids]
+-                - M21 * ddq_raw[:, hip_ids]
++                0
++                # - self.Jm * ddq_raw[:, hip_ids] 
++                # - self.Bm * dq_raw[:, hip_ids]
++                # - M22 * ddq_raw[:, knee_ids]
++                # - M21 * ddq_raw[:, hip_ids]
+             
+             )
+ 
+diff --git a/source/rl_training/rl_training/tasks/locomotion/M_rewards.py b/source/rl_training/rl_training/tasks/locomotion/M_rewards.py
+index c53d5a5..6dd2de6 100644
+--- a/source/rl_training/rl_training/tasks/locomotion/M_rewards.py
++++ b/source/rl_training/rl_training/tasks/locomotion/M_rewards.py
+@@ -74,7 +74,16 @@ class RewardsCfg:
+         setattr(self, attr_name, rew_term)
+ 
+     joint_pos_limits = RewTerm(
+-        func=mdp.joint_pos_limits, weight=0.0, params={"asset_cfg": SceneEntityCfg("robot", joint_names=".*")}
++        func=mdp.joint_pos_limits,
++        weight=0.0,
++        params={
++            "asset_cfg": SceneEntityCfg("robot", joint_names=".*"),
++            "soft_ratio": 1.0,
++            "margin_ratio": 0.0,
++            "power": 2.0,
++            "limit_overrides": None,
++            "bispace_limit_overrides": None,
++        },
+     )
+     joint_vel_limits = RewTerm(
+         func=mdp.joint_vel_limits,
+diff --git a/source/rl_training/rl_training/tasks/locomotion/config/MCL_Quad_serial/flat_env_cfg.py b/source/rl_training/rl_training/tasks/locomotion/config/MCL_Quad_serial/flat_env_cfg.py
+index 7d9f0fb..9252298 100644
+--- a/source/rl_training/rl_training/tasks/locomotion/config/MCL_Quad_serial/flat_env_cfg.py
++++ b/source/rl_training/rl_training/tasks/locomotion/config/MCL_Quad_serial/flat_env_cfg.py
+@@ -127,14 +127,18 @@ class MCLQuadserialFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
+         # self.events.randomize_rigid_body_mass.params["asset_cfg"].body_names = self.base_link_name 
+         self.events.randomize_rigid_body_mass_base = None
+         
++        #! Whole & Leg 
+         self.events.randomize_com_positions.params["asset_cfg"].body_names = self.base_link_name 
++        # self.events.randomize_com_positions.params["asset_cfg"].body_names = self.whole_link_names 
+         # self.events.randomize_com_positions = None
+             
++        #! Whole & Leg
+         self.events.randomize_rigid_body_inertia.params["asset_cfg"].body_names = self.base_link_name 
++        # self.events.randomize_rigid_body_inertia.params["asset_cfg"].body_names = self.whole_link_names 
+         # self.events.randomize_rigid_body_inertia = None
+ 
+         #? Leg
+-        # self.events.randomize_rigid_body_mass.params["asset_cfg"].body_names = self.base_link_name 
++        # self.events.randomize_rigid_body_mass.params["asset_cfg"].body_names = self.link_names 
+         self.events.randomize_rigid_body_mass = None 
+ 
+     #? External Force
+@@ -150,7 +154,7 @@ class MCLQuadserialFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
+         self.rewards.feet_air_time.weight = 2.5
+         self.rewards.feet_air_time.params["threshold"] = 0.3
+         self.rewards.feet_air_time.params["sensor_cfg"].body_names = [self.foot_link_name]
+-        self.rewards.feet_air_time_variance.weight = -4.0
++        self.rewards.feet_air_time_variance.weight = -7.5
+         self.rewards.feet_air_time_variance.params["sensor_cfg"].body_names = [self.foot_link_name]
+         self.rewards.feet_slide.weight = -1.81
+         self.rewards.feet_slide.params["sensor_cfg"].body_names = [self.foot_link_name]
+@@ -167,11 +171,11 @@ class MCLQuadserialFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
+         self.rewards.contact_forces.weight = -1.0e-2
+         self.rewards.contact_forces.params["sensor_cfg"].body_names = [self.foot_link_name]
+         self.rewards.contact_forces.params["threshold"] = 300.0
+-        self.rewards.diagonal_grf_balance.weight = -0.0
+-        self.rewards.inter_diagonal_load_balance.weight = -0.35
+-        self.rewards.lin_vel_z_l2.weight = -3.5
++        self.rewards.diagonal_grf_balance.weight = 0.0
++        self.rewards.inter_diagonal_load_balance.weight = -0.3
++        self.rewards.lin_vel_z_l2.weight = -3.8
+         self.rewards.ang_vel_xy_l2.weight = -2.0
+-        self.rewards.track_lin_vel_xy_exp.weight = 9.0
++        self.rewards.track_lin_vel_xy_exp.weight = 9.2
+         self.rewards.track_ang_vel_z_exp.weight = 1.0
+ 
+         self.rewards.undesired_contacts.weight = -1.0
+@@ -207,6 +211,14 @@ class MCLQuadserialFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
+         ]
+ 
+         self.rewards.joint_pos_limits.weight = -5.0
++        self.rewards.joint_pos_limits.params["soft_ratio"] = 1.0
++        self.rewards.joint_pos_limits.params["margin_ratio"] = 0.15
++        self.rewards.joint_pos_limits.params["power"] = 2.0
++        self.rewards.joint_pos_limits.params["limit_overrides"] = None
++        self.rewards.joint_pos_limits.params["bispace_limit_overrides"] = {
++            "QM": (0.0, 3.0),
++            "QB": (1.0, 3.0),
++        }
+         self.rewards.feet_contact_without_cmd.weight = 0.0
+         self.rewards.feet_contact_without_cmd.params["sensor_cfg"].body_names = [self.foot_link_name]
+ 
+@@ -224,5 +236,5 @@ class MCLQuadserialFlatEnvCfg(LocomotionVelocityRoughEnvCfg):
+ 
+         # ------------------------------Commands------------------------------
+         self.commands.base_velocity.ranges.lin_vel_x = (-2.5, 2.5)
+-        self.commands.base_velocity.ranges.lin_vel_y = (-0.8, 0.8)
+-        self.commands.base_velocity.ranges.ang_vel_z = (-0.8, 0.8)
++        self.commands.base_velocity.ranges.lin_vel_y = (-1.0, 1.0)
++        self.commands.base_velocity.ranges.ang_vel_z = (-1.5, 1.5)
+diff --git a/source/rl_training/rl_training/tasks/locomotion/mdp/rewards.py b/source/rl_training/rl_training/tasks/locomotion/mdp/rewards.py
+index c77db0d..bbee1be 100644
+--- a/source/rl_training/rl_training/tasks/locomotion/mdp/rewards.py
++++ b/source/rl_training/rl_training/tasks/locomotion/mdp/rewards.py
+@@ -6,6 +6,7 @@
+ 
+ from __future__ import annotations
+ 
++import re
+ import torch
+ from typing import TYPE_CHECKING
+ 
+@@ -483,20 +484,83 @@ def joint_deviation_l1(env: ManagerBasedRLEnv, asset_cfg: SceneEntityCfg = Scene
+     return torch.sum(torch.abs(diff_angle), dim=1)
+ 
+ 
+-def joint_pos_limits(env: ManagerBasedRLEnv, asset_cfg: SceneEntityCfg = SceneEntityCfg("robot")) -> torch.Tensor:
+-    """Penalize violations of soft joint position limits in bi-space for hip/knee."""
++def joint_pos_limits(
++    env: ManagerBasedRLEnv,
++    asset_cfg: SceneEntityCfg = SceneEntityCfg("robot"),
++    soft_ratio: float = 1.0,
++    margin_ratio: float = 0.0,
++    power: float = 2.0,
++    limit_overrides: dict[str, tuple[float, float]] | None = None,
++    bispace_limit_overrides: dict[str, tuple[float, float]] | None = None,
++) -> torch.Tensor:
++    """Penalize joint positions near or beyond soft limits in bi-space for hip/knee.
++
++    Args:
++        soft_ratio: Scales the soft interval about its center before applying the penalty.
++            `1.0` keeps the asset-provided soft limits unchanged.
++        margin_ratio: Fraction of the interval on each side treated as a margin zone.
++            `0.0` preserves the old behavior and penalizes only out-of-limit values.
++        power: Exponent used for the margin-zone penalty.
++        limit_overrides: Optional regex-keyed lower/upper bounds applied before bi-space
++            conversion, e.g. `{"FRHIP": (0.6, 1.8), ".*KNEE": (0.2, 2.2)}`.
++        bispace_limit_overrides: Optional bi-space lower/upper bounds applied after bi-space
++            conversion. Only the keys `QM` and `QB` are used, e.g.
++            `{"QM": (0.6, 1.8), "QB": (1.6, 2.3)}`.
++    """
+     asset: Articulation = env.scene[asset_cfg.name]
++    joint_ids = _selected_joint_ids(asset, asset_cfg)
++    joint_names = [str(asset.joint_names[joint_id]) for joint_id in joint_ids]
+     joint_pos = asset.data.joint_pos[:, asset_cfg.joint_ids]
+     lower_limits = asset.data.soft_joint_pos_limits[:, asset_cfg.joint_ids, 0]
+     upper_limits = asset.data.soft_joint_pos_limits[:, asset_cfg.joint_ids, 1]
+ 
++    if limit_overrides:
++        lower_limits = lower_limits.clone()
++        upper_limits = upper_limits.clone()
++        for pattern, bounds in limit_overrides.items():
++            regex = re.compile(pattern, re.IGNORECASE)
++            override_lower, override_upper = float(bounds[0]), float(bounds[1])
++            for idx, joint_name in enumerate(joint_names):
++                if regex.fullmatch(joint_name):
++                    lower_limits[:, idx] = override_lower
++                    upper_limits[:, idx] = override_upper
++
+     pairs = _bi_pairs_for_cfg(env, asset, asset_cfg)
+     joint_pos = _apply_bispace_state(joint_pos, pairs)
+     lower_limits, upper_limits = _apply_bispace_pos_limits(lower_limits, upper_limits, pairs)
+ 
+-    out_of_limits = torch.clamp(lower_limits - joint_pos, min=0.0)
+-    out_of_limits += torch.clamp(joint_pos - upper_limits, min=0.0)
+-    return torch.sum(out_of_limits, dim=1)
++    if bispace_limit_overrides and pairs:
++        lower_limits = lower_limits.clone()
++        upper_limits = upper_limits.clone()
++        qm_bounds = bispace_limit_overrides.get("QM") or bispace_limit_overrides.get("qm")
++        qb_bounds = bispace_limit_overrides.get("QB") or bispace_limit_overrides.get("qb")
++        for hip_idx, knee_idx in pairs:
++            if qm_bounds is not None:
++                lower_limits[:, hip_idx] = float(qm_bounds[0])
++                upper_limits[:, hip_idx] = float(qm_bounds[1])
++            if qb_bounds is not None:
++                lower_limits[:, knee_idx] = float(qb_bounds[0])
++                upper_limits[:, knee_idx] = float(qb_bounds[1])
++
++    center = 0.5 * (lower_limits + upper_limits)
++    half_range = 0.5 * torch.clamp(upper_limits - lower_limits, min=1.0e-6)
++    scaled_half_range = torch.clamp(half_range * float(soft_ratio), min=1.0e-6)
++    effective_lower = center - scaled_half_range
++    effective_upper = center + scaled_half_range
++
++    if margin_ratio <= 0.0:
++        out_of_limits = torch.clamp(effective_lower - joint_pos, min=0.0)
++        out_of_limits += torch.clamp(joint_pos - effective_upper, min=0.0)
++        return torch.sum(out_of_limits, dim=1)
++
++    margin = torch.clamp((effective_upper - effective_lower) * float(margin_ratio), min=1.0e-6)
++    lower_distance = joint_pos - effective_lower
++    upper_distance = effective_upper - joint_pos
++
++    lower_penalty = torch.clamp((margin - lower_distance) / margin, min=0.0)
++    upper_penalty = torch.clamp((margin - upper_distance) / margin, min=0.0)
++    penalty = torch.pow(lower_penalty, float(power)) + torch.pow(upper_penalty, float(power))
++    return torch.sum(penalty, dim=1)
+ 
+ 
+ def joint_vel_limits(

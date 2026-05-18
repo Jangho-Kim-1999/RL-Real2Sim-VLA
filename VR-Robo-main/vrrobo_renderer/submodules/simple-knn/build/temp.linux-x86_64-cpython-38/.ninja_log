@@ -1,0 +1,4 @@
+# ninja log v5
+0	10872	1778085915291038716	/home/teamquad/Desktop/JHKim/[3] Vision_RL/VR-Robo-main/vrrobo_renderer/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/simple_knn.o	722e8e3ea0de0750
+0	25086	1778085929491012186	/home/teamquad/Desktop/JHKim/[3] Vision_RL/VR-Robo-main/vrrobo_renderer/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/ext.o	55237eaccff0ebb1
+1	48554	1778085952970968351	/home/teamquad/Desktop/JHKim/[3] Vision_RL/VR-Robo-main/vrrobo_renderer/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/spatial.o	566df38558b48e02

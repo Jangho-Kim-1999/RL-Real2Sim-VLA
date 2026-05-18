@@ -1,0 +1,32 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def DistantLight "KeyLight"
+    {
+        float intensity = 5000
+        float angle = 0.5
+    }
+
+    def Camera "PreviewCamera"
+    {
+        float focalLength = 18
+        float2 clippingRange = (0.01, 10000)
+        double3 xformOp:translate = (0, -8, 3)
+        double3 xformOp:rotateXYZ = (65, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+    }
+
+    def Xform "Lounge3DGUTNuRec" (
+        prepend references = @./lounge_3dgut_mcmc_300k_nurec.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.70710677, 0.70710677, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:orient"]
+    }
+}
