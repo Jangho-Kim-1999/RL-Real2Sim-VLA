@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import math
+import os
 
 import isaaclab.sim as sim_utils
 import vrrobo_isaaclab.tasks.vrrobo.mdp as vr_mdp
@@ -14,6 +15,7 @@ from isaaclab.managers import RewardTermCfg as RewTerm
 from isaaclab.managers import SceneEntityCfg
 from isaaclab.managers import TerminationTermCfg as DoneTerm
 from isaaclab.scene import InteractiveSceneCfg
+from isaaclab.sensors import TiledCameraCfg
 from isaaclab.terrains import TerrainImporterCfg
 from isaaclab.utils import configclass
 from isaaclab.utils.noise import AdditiveUniformNoiseCfg as Unoise
@@ -27,6 +29,38 @@ LOW_LEVEL_DECIMATION = 6
 SIM_DT = 0.003
 BASE_LINK_NAME = "base_link"
 LOW_LEVEL_POLICY_4000 = "../../../../../../low_level_policy/model_4000.pt"
+MCL_CAMERA_POS = (0.15, 0.0, 0.20)
+MCL_CAMERA_RPY_DEG = (-100.0, 0.0, -90.0)
+MCL_CAMERA_HEIGHT = 180
+MCL_CAMERA_WIDTH = 320
+_WORKSPACE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+R7_SCENE_USD = os.path.join(_WORKSPACE_DIR, "3D_files", "3DGUT_USDZ", "r7_final.usd")
+# r7_final.usd authors GroundPlane at z=0.170092; shift it down so floor visual/collision sits at z=0.
+R7_ASSET_OFFSET = (0.0, 0.0, -0.170092)
+
+
+def quat_from_rpy_deg(roll_deg: float, pitch_deg: float, yaw_deg: float) -> tuple[float, float, float, float]:
+    """Convert roll/pitch/yaw degrees to a quaternion in (w, x, y, z) order."""
+    roll = math.radians(roll_deg)
+    pitch = math.radians(pitch_deg)
+    yaw = math.radians(yaw_deg)
+
+    cy = math.cos(yaw * 0.5)
+    sy = math.sin(yaw * 0.5)
+    cp = math.cos(pitch * 0.5)
+    sp = math.sin(pitch * 0.5)
+    cr = math.cos(roll * 0.5)
+    sr = math.sin(roll * 0.5)
+
+    return (
+        cr * cp * cy + sr * sp * sy,
+        sr * cp * cy - cr * sp * sy,
+        cr * sp * cy + sr * cp * sy,
+        cr * cp * sy - sr * sp * cy,
+    )
+
+
+MCL_CAMERA_ROT_ROS = quat_from_rpy_deg(*MCL_CAMERA_RPY_DEG)
 
 
 @configclass
@@ -93,6 +127,38 @@ class ObjectPushingSceneCfg(InteractiveSceneCfg):
     sky_light = AssetBaseCfg(
         prim_path="/World/skyLight",
         spawn=sim_utils.DomeLightCfg(color=(0.15, 0.15, 0.15), intensity=1000.0),
+    )
+    front_rgb_camera: TiledCameraCfg | None = None
+    r7_room: AssetBaseCfg | None = None
+
+
+@configclass
+class ObjectPushingR7CameraSceneCfg(ObjectPushingSceneCfg):
+    r7_room = AssetBaseCfg(
+        prim_path="{ENV_REGEX_NS}/R7Room",
+        spawn=sim_utils.UsdFileCfg(
+            usd_path=R7_SCENE_USD,
+            collision_props=sim_utils.CollisionPropertiesCfg(collision_enabled=True),
+        ),
+        init_state=AssetBaseCfg.InitialStateCfg(pos=R7_ASSET_OFFSET, rot=(1.0, 0.0, 0.0, 0.0)),
+    )
+    front_rgb_camera = TiledCameraCfg(
+        prim_path=f"{{ENV_REGEX_NS}}/Robot/{BASE_LINK_NAME}/front_rgb_camera",
+        update_period=1.0 / UPLEVEL_FREQUENCY,
+        height=MCL_CAMERA_HEIGHT,
+        width=MCL_CAMERA_WIDTH,
+        data_types=["rgb"],
+        spawn=sim_utils.PinholeCameraCfg(
+            focal_length=18.0,
+            focus_distance=400.0,
+            horizontal_aperture=20.955,
+            clipping_range=(0.01, 100.0),
+        ),
+        offset=TiledCameraCfg.OffsetCfg(
+            pos=MCL_CAMERA_POS,
+            rot=MCL_CAMERA_ROT_ROS,
+            convention="ros",
+        ),
     )
 
 
@@ -308,3 +374,18 @@ class MCLQuadObjectPushingPlayEnvCfg(MCLQuadObjectPushingEnvCfg):
         self.scene.num_envs = 1
         self.episode_length_s = 30.0
         self.observations.locomotion.enable_corruption = False
+
+
+@configclass
+class MCLQuadObjectPushingR7CameraPlayEnvCfg(MCLQuadObjectPushingPlayEnvCfg):
+    """Single-env play config for VLA data collection in the R7 room with ego RGB."""
+
+    scene: ObjectPushingR7CameraSceneCfg = ObjectPushingR7CameraSceneCfg(
+        num_envs=1,
+        env_spacing=8.0,
+        replicate_physics=False,
+    )
+
+    def __post_init__(self):
+        super().__post_init__()
+        self.scene.front_rgb_camera.update_period = self.decimation * self.sim.dt

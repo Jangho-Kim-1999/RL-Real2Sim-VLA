@@ -1,6 +1,8 @@
 VR-Robo-main/vrrobo_isaaclab/vla_weights/
 VR-Robo-main/vrrobo_isaaclab/logs/
 VR-Robo-main/vrrobo_isaaclab/outputs/
+Object_Pushing/logs/
+Object_Pushing/vla_push_dataset/
 
 VR-Robo-main/vrrobo_renderer/vr-robo-dataset.zip
 VR-Robo-main/vrrobo_renderer/vr-robo-dataset/

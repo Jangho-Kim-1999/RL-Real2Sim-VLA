@@ -261,7 +261,11 @@ def reset_pushing_scene(
     env_ids: torch.Tensor,
     robot_radius_range: tuple[float, float] = ROBOT_RADIUS_START_RANGE,
     object_xy_range: tuple[float, float] = (-0.5, 0.5),
+    object_yaw_range: tuple[float, float] = (-math.pi, math.pi),
     target_distance_range: tuple[float, float] = TARGET_DISTANCE_START_RANGE,
+    target_angle_range: tuple[float, float] = (-math.pi, math.pi),
+    robot_lateral_range: tuple[float, float] = ROBOT_LATERAL_START_RANGE,
+    robot_yaw_noise_range: tuple[float, float] = ROBOT_YAW_NOISE_START_RANGE,
     robot_cfg: SceneEntityCfg = SceneEntityCfg("robot"),
     object_cfg: SceneEntityCfg = SceneEntityCfg("push_object"),
     target_cfg: SceneEntityCfg = SceneEntityCfg("target_marker"),
@@ -274,8 +278,8 @@ def reset_pushing_scene(
     origins = env.scene.env_origins[env_ids]
     robot_radius_range = getattr(env, "_object_pushing_robot_radius_range", robot_radius_range)
     target_distance_range = getattr(env, "_object_pushing_target_distance_range", target_distance_range)
-    robot_lateral_range = getattr(env, "_object_pushing_robot_lateral_range", ROBOT_LATERAL_START_RANGE)
-    robot_yaw_noise_range = getattr(env, "_object_pushing_robot_yaw_noise_range", ROBOT_YAW_NOISE_START_RANGE)
+    robot_lateral_range = getattr(env, "_object_pushing_robot_lateral_range", robot_lateral_range)
+    robot_yaw_noise_range = getattr(env, "_object_pushing_robot_yaw_noise_range", robot_yaw_noise_range)
     object_heights = getattr(env, "_object_pushing_object_heights", None)
     if object_heights is None:
         object_center_z = torch.full((count, 1), OBJECT_CENTER_Z, device=device)
@@ -283,9 +287,9 @@ def reset_pushing_scene(
         object_center_z = 0.5 * object_heights[env_ids].unsqueeze(1)
 
     object_xy = torch.empty(count, 2, device=device).uniform_(object_xy_range[0], object_xy_range[1])
-    object_yaw = torch.empty(count, device=device).uniform_(-math.pi, math.pi)
+    object_yaw = torch.empty(count, device=device).uniform_(object_yaw_range[0], object_yaw_range[1])
     target_dist = torch.empty(count, device=device).uniform_(target_distance_range[0], target_distance_range[1])
-    target_angle = torch.empty(count, device=device).uniform_(-math.pi, math.pi)
+    target_angle = torch.empty(count, device=device).uniform_(target_angle_range[0], target_angle_range[1])
     target_dir = torch.stack((torch.cos(target_angle), torch.sin(target_angle)), dim=1)
     lateral_dir = torch.stack((-torch.sin(target_angle), torch.cos(target_angle)), dim=1)
     target_xy = object_xy + target_dist.unsqueeze(1) * target_dir

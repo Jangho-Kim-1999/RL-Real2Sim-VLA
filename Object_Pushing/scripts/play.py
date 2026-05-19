@@ -39,6 +39,67 @@ parser.add_argument(
     default="plot_object_pushing_play_log.m",
     help="MATLAB plotting script filename.",
 )
+parser.add_argument(
+    "--object_xy_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override object spawn local X/Y range in meters. Example: --object_xy_range -0.5 0.5",
+)
+parser.add_argument(
+    "--object_yaw_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override initial object yaw range in radians.",
+)
+parser.add_argument(
+    "--robot_radius_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override initial robot-object distance range in meters.",
+)
+parser.add_argument(
+    "--target_distance_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override initial object-target distance range in meters.",
+)
+parser.add_argument(
+    "--target_angle_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override target direction angle range around the object in radians.",
+)
+parser.add_argument(
+    "--robot_lateral_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override robot lateral offset from object-target line in meters.",
+)
+parser.add_argument(
+    "--robot_yaw_noise_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override robot yaw noise around target direction in radians.",
+)
+parser.add_argument(
+    "--disable_spawn_curriculum",
+    action="store_true",
+    help="Disable spawn-distance curriculum during play and use reset ranges directly.",
+)
 cli_args.add_rsl_rl_args(parser)
 AppLauncher.add_app_launcher_args(parser)
 args_cli = parser.parse_args()
@@ -200,6 +261,68 @@ def _save_mat_file(mat_path: str, rows: list[dict[str, float]]) -> bool:
     return True
 
 
+def _range_arg(value: list[float] | None) -> tuple[float, float] | None:
+    if value is None:
+        return None
+    range_min = float(min(value))
+    range_max = float(max(value))
+    return range_min, range_max
+
+
+def _apply_spawn_overrides(env_cfg) -> None:
+    reset_params = env_cfg.events.reset_scene.params
+    if reset_params is None:
+        reset_params = {}
+        env_cfg.events.reset_scene.params = reset_params
+
+    curriculum_params = None
+    spawn_curriculum = getattr(env_cfg.curriculum, "spawn_distances", None)
+    if spawn_curriculum is not None:
+        curriculum_params = spawn_curriculum.params
+        if curriculum_params is None:
+            curriculum_params = {}
+            spawn_curriculum.params = curriculum_params
+
+    overrides = {
+        "object_xy_range": _range_arg(args_cli.object_xy_range),
+        "object_yaw_range": _range_arg(args_cli.object_yaw_range),
+        "robot_radius_range": _range_arg(args_cli.robot_radius_range),
+        "target_distance_range": _range_arg(args_cli.target_distance_range),
+        "target_angle_range": _range_arg(args_cli.target_angle_range),
+        "robot_lateral_range": _range_arg(args_cli.robot_lateral_range),
+        "robot_yaw_noise_range": _range_arg(args_cli.robot_yaw_noise_range),
+    }
+    active_overrides = {key: value for key, value in overrides.items() if value is not None}
+    reset_params.update(active_overrides)
+
+    curriculum_range_map = {
+        "robot_radius_range": ("robot_radius_start_range", "robot_radius_end_range"),
+        "target_distance_range": ("target_distance_start_range", "target_distance_end_range"),
+        "robot_lateral_range": ("robot_lateral_start_range", "robot_lateral_end_range"),
+        "robot_yaw_noise_range": ("robot_yaw_noise_start_range", "robot_yaw_noise_end_range"),
+    }
+    if args_cli.disable_spawn_curriculum:
+        env_cfg.curriculum.spawn_distances = None
+    elif curriculum_params is not None:
+        for reset_key, curriculum_keys in curriculum_range_map.items():
+            if overrides[reset_key] is None:
+                continue
+            for curriculum_key in curriculum_keys:
+                curriculum_params[curriculum_key] = overrides[reset_key]
+
+    if active_overrides:
+        print("[INFO] Play spawn range overrides:")
+        for key, value in active_overrides.items():
+            print(f"       {key}={value}")
+        if args_cli.disable_spawn_curriculum:
+            print("[INFO] Spawn curriculum disabled for play.")
+        else:
+            print("[INFO] Matching curriculum start/end ranges were overridden for fixed play ranges.")
+    elif args_cli.disable_spawn_curriculum:
+        env_cfg.curriculum.spawn_distances = None
+        print("[INFO] Spawn curriculum disabled for play.")
+
+
 def main() -> None:
     env_cfg = parse_env_cfg(
         args_cli.task,
@@ -207,6 +330,7 @@ def main() -> None:
         num_envs=args_cli.num_envs,
         use_fabric=not args_cli.disable_fabric,
     )
+    _apply_spawn_overrides(env_cfg)
     agent_cfg = cli_args.parse_rsl_rl_cfg(args_cli.task, args_cli)
     log_root_path = os.path.join(_OBJECT_PUSHING_DIR, "logs", "rsl_rl", agent_cfg.experiment_name)
     if args_cli.no_checkpoint:
