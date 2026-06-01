@@ -14,6 +14,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+import os
 import warnings
 from dataclasses import dataclass, field
 
@@ -53,6 +54,12 @@ def add_dataset(dataset):
 
 
 def register_datasets_mixtures():
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    workspace_root = os.path.abspath(os.path.join(repo_root, ".."))
+    mclquad_push_root = os.environ.get(
+        "NAVILA_MCLQUAD_PUSH_ROOT",
+        os.path.join(workspace_root, "Object_Pushing", "vla_push_dataset"),
+    )
 
     video_chatgpt = Dataset(
         dataset_name="video_chatgpt",
@@ -122,3 +129,15 @@ def register_datasets_mixtures():
         description="560K Real augmented, no direction is included. (augmented aith duplicate stops only - 5x)",
     )
     add_dataset(human)
+
+    mclquad_push = Dataset(
+        dataset_name="mclquad_push",
+        dataset_type="vlnce",
+        data_path=os.environ.get(
+            "NAVILA_MCLQUAD_PUSH_ANNOTATIONS",
+            os.path.join(mclquad_push_root, "annotations.json"),
+        ),
+        image_path=os.environ.get("NAVILA_MCLQUAD_PUSH_IMAGE_PATH", mclquad_push_root),
+        description="MCLQuad cylinder-pushing VLA data generated from the IsaacLab object-pushing expert.",
+    )
+    add_dataset(mclquad_push)

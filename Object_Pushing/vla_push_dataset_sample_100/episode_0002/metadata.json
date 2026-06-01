@@ -1,0 +1,1063 @@
+{
+  "episode_id": 2,
+  "instruction": "Clear the cylinder by pushing it to the marked location.",
+  "num_frames": 113,
+  "num_samples": 50,
+  "num_history": 7,
+  "success": true,
+  "final_object_target_distance_m": 0.04913797229528427,
+  "raw_actions": [
+    {
+      "frame_idx": 0,
+      "forward_cm": -2.2145881888857355,
+      "rotation_deg": 6.92691772090058,
+      "action_label": "turn left 7 degrees"
+    },
+    {
+      "frame_idx": 1,
+      "forward_cm": 8.567820856665445,
+      "rotation_deg": 3.5354515785547904,
+      "action_label": "turn left 4 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 2,
+      "forward_cm": 14.204772154493748,
+      "rotation_deg": -3.360917267582032,
+      "action_label": "turn right 3 degrees, move forward 14 cm"
+    },
+    {
+      "frame_idx": 3,
+      "forward_cm": 17.58307209746876,
+      "rotation_deg": -8.481030108138436,
+      "action_label": "turn right 8 degrees, move forward 18 cm"
+    },
+    {
+      "frame_idx": 4,
+      "forward_cm": 14.248023960345297,
+      "rotation_deg": -7.9874452680473125,
+      "action_label": "turn right 8 degrees, move forward 14 cm"
+    },
+    {
+      "frame_idx": 5,
+      "forward_cm": 17.34479241435724,
+      "rotation_deg": -6.685190288517178,
+      "action_label": "turn right 7 degrees, move forward 17 cm"
+    },
+    {
+      "frame_idx": 6,
+      "forward_cm": 14.961523084815987,
+      "rotation_deg": -1.7611427070634922,
+      "action_label": "turn right 2 degrees, move forward 15 cm"
+    },
+    {
+      "frame_idx": 7,
+      "forward_cm": 12.171939856425906,
+      "rotation_deg": 6.373447731606838,
+      "action_label": "turn left 6 degrees, move forward 12 cm"
+    },
+    {
+      "frame_idx": 8,
+      "forward_cm": 11.71041023996806,
+      "rotation_deg": 2.529965501400919,
+      "action_label": "turn left 3 degrees, move forward 12 cm"
+    },
+    {
+      "frame_idx": 9,
+      "forward_cm": 15.583177378161373,
+      "rotation_deg": -2.6937137291930346,
+      "action_label": "turn right 3 degrees, move forward 16 cm"
+    },
+    {
+      "frame_idx": 10,
+      "forward_cm": 20.68258663244204,
+      "rotation_deg": -8.381592440915027,
+      "action_label": "turn right 8 degrees, move forward 21 cm"
+    },
+    {
+      "frame_idx": 11,
+      "forward_cm": 16.544459473894115,
+      "rotation_deg": -9.882720240851206,
+      "action_label": "turn right 10 degrees, move forward 17 cm"
+    },
+    {
+      "frame_idx": 12,
+      "forward_cm": 11.60954982656607,
+      "rotation_deg": -11.869235549605653,
+      "action_label": "turn right 12 degrees, move forward 12 cm"
+    },
+    {
+      "frame_idx": 13,
+      "forward_cm": 9.619256854465686,
+      "rotation_deg": -9.156665220501708,
+      "action_label": "turn right 9 degrees, move forward 10 cm"
+    },
+    {
+      "frame_idx": 14,
+      "forward_cm": 17.209565479967136,
+      "rotation_deg": 5.350964996289943,
+      "action_label": "turn left 5 degrees, move forward 17 cm"
+    },
+    {
+      "frame_idx": 15,
+      "forward_cm": 13.605736888557605,
+      "rotation_deg": -2.809939599899371,
+      "action_label": "turn right 3 degrees, move forward 14 cm"
+    },
+    {
+      "frame_idx": 16,
+      "forward_cm": 16.365563687796257,
+      "rotation_deg": -5.6213747491303385,
+      "action_label": "turn right 6 degrees, move forward 16 cm"
+    },
+    {
+      "frame_idx": 17,
+      "forward_cm": 19.965204588837594,
+      "rotation_deg": 4.893591590871593,
+      "action_label": "turn left 5 degrees, move forward 20 cm"
+    },
+    {
+      "frame_idx": 18,
+      "forward_cm": 18.7979829519594,
+      "rotation_deg": 7.372608470650397,
+      "action_label": "turn left 7 degrees, move forward 19 cm"
+    },
+    {
+      "frame_idx": 19,
+      "forward_cm": 19.39662271310376,
+      "rotation_deg": 3.1924205453283196,
+      "action_label": "turn left 3 degrees, move forward 19 cm"
+    },
+    {
+      "frame_idx": 20,
+      "forward_cm": 16.199431043768215,
+      "rotation_deg": -5.154521273696551,
+      "action_label": "turn right 5 degrees, move forward 16 cm"
+    },
+    {
+      "frame_idx": 21,
+      "forward_cm": 17.252953728708775,
+      "rotation_deg": 5.075364855192203,
+      "action_label": "turn left 5 degrees, move forward 17 cm"
+    },
+    {
+      "frame_idx": 22,
+      "forward_cm": 18.11150047072627,
+      "rotation_deg": -2.5981958321389067,
+      "action_label": "turn right 3 degrees, move forward 18 cm"
+    },
+    {
+      "frame_idx": 23,
+      "forward_cm": 18.249776101588726,
+      "rotation_deg": -11.414840995294442,
+      "action_label": "turn right 11 degrees, move forward 18 cm"
+    },
+    {
+      "frame_idx": 24,
+      "forward_cm": 12.764817882148083,
+      "rotation_deg": -10.689963546249635,
+      "action_label": "turn right 11 degrees, move forward 13 cm"
+    },
+    {
+      "frame_idx": 25,
+      "forward_cm": 3.4367264886744096,
+      "rotation_deg": -7.576386527232277,
+      "action_label": "turn right 8 degrees, move forward 3 cm"
+    },
+    {
+      "frame_idx": 26,
+      "forward_cm": 1.9030185960151234,
+      "rotation_deg": -5.726466474417282,
+      "action_label": "turn right 6 degrees, move forward 2 cm"
+    },
+    {
+      "frame_idx": 27,
+      "forward_cm": 2.3849244197042445,
+      "rotation_deg": -8.425756411814731,
+      "action_label": "turn right 8 degrees, move forward 2 cm"
+    },
+    {
+      "frame_idx": 28,
+      "forward_cm": -0.8871411248627383,
+      "rotation_deg": -2.586457547574576,
+      "action_label": "turn right 3 degrees"
+    },
+    {
+      "frame_idx": 29,
+      "forward_cm": -0.8547401875603282,
+      "rotation_deg": -1.234144769760184,
+      "action_label": "turn right 1 degrees"
+    },
+    {
+      "frame_idx": 30,
+      "forward_cm": 1.4776234162800859,
+      "rotation_deg": 1.7368252916634634,
+      "action_label": "turn left 2 degrees, move forward 1 cm"
+    },
+    {
+      "frame_idx": 31,
+      "forward_cm": 2.24885978243494,
+      "rotation_deg": 0.4294979732596758,
+      "action_label": "move forward 2 cm"
+    },
+    {
+      "frame_idx": 32,
+      "forward_cm": 0.7005760871565536,
+      "rotation_deg": -0.8932337442344582,
+      "action_label": "stop"
+    },
+    {
+      "frame_idx": 33,
+      "forward_cm": 0.4344906591372317,
+      "rotation_deg": 1.495472028851109,
+      "action_label": "turn left 1 degrees"
+    },
+    {
+      "frame_idx": 34,
+      "forward_cm": 0.2599191613027131,
+      "rotation_deg": -0.3003826236431016,
+      "action_label": "stop"
+    },
+    {
+      "frame_idx": 35,
+      "forward_cm": 0.1092653213200432,
+      "rotation_deg": 1.2432040589358528,
+      "action_label": "turn left 1 degrees"
+    },
+    {
+      "frame_idx": 36,
+      "forward_cm": 0.2314207795011119,
+      "rotation_deg": 0.09874045081858762,
+      "action_label": "stop"
+    },
+    {
+      "frame_idx": 37,
+      "forward_cm": -0.2672418646997262,
+      "rotation_deg": 0.8605067454281663,
+      "action_label": "stop"
+    },
+    {
+      "frame_idx": 38,
+      "forward_cm": -0.11350871434407692,
+      "rotation_deg": 1.5845209691604942,
+      "action_label": "turn left 2 degrees"
+    },
+    {
+      "frame_idx": 39,
+      "forward_cm": 0.9797951275580765,
+      "rotation_deg": 0.49145036415756066,
+      "action_label": "stop"
+    },
+    {
+      "frame_idx": 40,
+      "forward_cm": 1.3585157593350234,
+      "rotation_deg": 2.2416876490141333,
+      "action_label": "turn left 2 degrees, move forward 1 cm"
+    },
+    {
+      "frame_idx": 41,
+      "forward_cm": 0.12428368727578536,
+      "rotation_deg": 6.025402103810168,
+      "action_label": "turn left 6 degrees"
+    },
+    {
+      "frame_idx": 42,
+      "forward_cm": 3.9894992894091335,
+      "rotation_deg": 2.890008580399149,
+      "action_label": "turn left 3 degrees, move forward 4 cm"
+    },
+    {
+      "frame_idx": 43,
+      "forward_cm": 5.76400238825211,
+      "rotation_deg": 7.031267842163723,
+      "action_label": "turn left 7 degrees, move forward 6 cm"
+    },
+    {
+      "frame_idx": 44,
+      "forward_cm": 4.942678603212358,
+      "rotation_deg": 9.6471682159628,
+      "action_label": "turn left 10 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 45,
+      "forward_cm": 8.185664267906128,
+      "rotation_deg": 11.895976995086723,
+      "action_label": "turn left 12 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 46,
+      "forward_cm": 8.69344002199773,
+      "rotation_deg": 11.550866602194654,
+      "action_label": "turn left 12 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 47,
+      "forward_cm": 9.113243728031343,
+      "rotation_deg": 12.277638851233526,
+      "action_label": "turn left 12 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 48,
+      "forward_cm": 9.97490693532409,
+      "rotation_deg": 11.649715724899051,
+      "action_label": "turn left 12 degrees, move forward 10 cm"
+    },
+    {
+      "frame_idx": 49,
+      "forward_cm": 11.675117983844185,
+      "rotation_deg": 12.138724158253765,
+      "action_label": "turn left 12 degrees, move forward 12 cm"
+    },
+    {
+      "frame_idx": 50,
+      "forward_cm": 10.473599631718237,
+      "rotation_deg": 11.373856836903842,
+      "action_label": "turn left 11 degrees, move forward 10 cm"
+    },
+    {
+      "frame_idx": 51,
+      "forward_cm": 11.12488955345063,
+      "rotation_deg": 11.294299406457444,
+      "action_label": "turn left 11 degrees, move forward 11 cm"
+    },
+    {
+      "frame_idx": 52,
+      "forward_cm": 8.523914057487877,
+      "rotation_deg": 11.602622181969739,
+      "action_label": "turn left 12 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 53,
+      "forward_cm": 7.544824330692382,
+      "rotation_deg": 10.844630277546422,
+      "action_label": "turn left 11 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 54,
+      "forward_cm": 8.307304164803027,
+      "rotation_deg": 10.718905496932374,
+      "action_label": "turn left 11 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 55,
+      "forward_cm": 4.624545373147186,
+      "rotation_deg": 10.580227160809567,
+      "action_label": "turn left 11 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 56,
+      "forward_cm": 8.102730573141221,
+      "rotation_deg": 11.168724798844586,
+      "action_label": "turn left 11 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 57,
+      "forward_cm": 9.257810536343621,
+      "rotation_deg": 12.07376426838664,
+      "action_label": "turn left 12 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 58,
+      "forward_cm": 11.360543334906868,
+      "rotation_deg": 11.109773862855747,
+      "action_label": "turn left 11 degrees, move forward 11 cm"
+    },
+    {
+      "frame_idx": 59,
+      "forward_cm": 10.913747068502257,
+      "rotation_deg": 12.916096145247733,
+      "action_label": "turn left 13 degrees, move forward 11 cm"
+    },
+    {
+      "frame_idx": 60,
+      "forward_cm": 6.453067345310076,
+      "rotation_deg": 12.796701987169547,
+      "action_label": "turn left 13 degrees, move forward 6 cm"
+    },
+    {
+      "frame_idx": 61,
+      "forward_cm": 5.01219331894847,
+      "rotation_deg": 12.857330543018076,
+      "action_label": "turn left 13 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 62,
+      "forward_cm": 2.499108504226766,
+      "rotation_deg": 13.198186837050082,
+      "action_label": "turn left 13 degrees, move forward 2 cm"
+    },
+    {
+      "frame_idx": 63,
+      "forward_cm": 4.8168172713199375,
+      "rotation_deg": 11.719975838831717,
+      "action_label": "turn left 12 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 64,
+      "forward_cm": 4.989585777410873,
+      "rotation_deg": 11.661659508547777,
+      "action_label": "turn left 12 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 65,
+      "forward_cm": 3.6941141466781344,
+      "rotation_deg": 10.415032451454305,
+      "action_label": "turn left 10 degrees, move forward 4 cm"
+    },
+    {
+      "frame_idx": 66,
+      "forward_cm": 8.109747893995932,
+      "rotation_deg": 11.800145518545746,
+      "action_label": "turn left 12 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 67,
+      "forward_cm": 7.169181301522778,
+      "rotation_deg": 10.313661615534395,
+      "action_label": "turn left 10 degrees, move forward 7 cm"
+    },
+    {
+      "frame_idx": 68,
+      "forward_cm": 9.777858009809313,
+      "rotation_deg": -4.011689810057906,
+      "action_label": "turn right 4 degrees, move forward 10 cm"
+    },
+    {
+      "frame_idx": 69,
+      "forward_cm": 12.845678388018483,
+      "rotation_deg": -8.435599855283556,
+      "action_label": "turn right 8 degrees, move forward 13 cm"
+    },
+    {
+      "frame_idx": 70,
+      "forward_cm": 5.618501426907871,
+      "rotation_deg": 7.9563009050752695,
+      "action_label": "turn left 8 degrees, move forward 6 cm"
+    },
+    {
+      "frame_idx": 71,
+      "forward_cm": 4.704633286308293,
+      "rotation_deg": 9.436378294191972,
+      "action_label": "turn left 9 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 72,
+      "forward_cm": 8.057408308485128,
+      "rotation_deg": 10.516725578909254,
+      "action_label": "turn left 11 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 73,
+      "forward_cm": 8.90380848142148,
+      "rotation_deg": 11.1794323735615,
+      "action_label": "turn left 11 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 74,
+      "forward_cm": 9.408034367756702,
+      "rotation_deg": 12.102374422193835,
+      "action_label": "turn left 12 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 75,
+      "forward_cm": 9.280559985900684,
+      "rotation_deg": 11.360978098676714,
+      "action_label": "turn left 11 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 76,
+      "forward_cm": 9.552688475014357,
+      "rotation_deg": 12.613230905863018,
+      "action_label": "turn left 13 degrees, move forward 10 cm"
+    },
+    {
+      "frame_idx": 77,
+      "forward_cm": 8.32575457161045,
+      "rotation_deg": 12.76025124946777,
+      "action_label": "turn left 13 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 78,
+      "forward_cm": 8.17823395924357,
+      "rotation_deg": 12.220852405383793,
+      "action_label": "turn left 12 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 79,
+      "forward_cm": 8.158800763415814,
+      "rotation_deg": 12.561862463883585,
+      "action_label": "turn left 13 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 80,
+      "forward_cm": 8.30667974707928,
+      "rotation_deg": 12.12548580414714,
+      "action_label": "turn left 12 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 81,
+      "forward_cm": 7.716166084377283,
+      "rotation_deg": 12.544550358767545,
+      "action_label": "turn left 13 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 82,
+      "forward_cm": 6.934792177920282,
+      "rotation_deg": 12.68206823134282,
+      "action_label": "turn left 13 degrees, move forward 7 cm"
+    },
+    {
+      "frame_idx": 83,
+      "forward_cm": 7.701297054770995,
+      "rotation_deg": 11.680781225731696,
+      "action_label": "turn left 12 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 84,
+      "forward_cm": 9.332298750076749,
+      "rotation_deg": 11.96869512467423,
+      "action_label": "turn left 12 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 85,
+      "forward_cm": 8.037442041061963,
+      "rotation_deg": 11.188224657778571,
+      "action_label": "turn left 11 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 86,
+      "forward_cm": 10.788580908880808,
+      "rotation_deg": 10.962106733709959,
+      "action_label": "turn left 11 degrees, move forward 11 cm"
+    },
+    {
+      "frame_idx": 87,
+      "forward_cm": 12.573015341479083,
+      "rotation_deg": 12.861167268427108,
+      "action_label": "turn left 13 degrees, move forward 13 cm"
+    },
+    {
+      "frame_idx": 88,
+      "forward_cm": 8.773554504260323,
+      "rotation_deg": 12.20988353235081,
+      "action_label": "turn left 12 degrees, move forward 9 cm"
+    },
+    {
+      "frame_idx": 89,
+      "forward_cm": 6.204633204375964,
+      "rotation_deg": 11.533466877190707,
+      "action_label": "turn left 12 degrees, move forward 6 cm"
+    },
+    {
+      "frame_idx": 90,
+      "forward_cm": 4.308235813277086,
+      "rotation_deg": 7.017654168391548,
+      "action_label": "turn left 7 degrees, move forward 4 cm"
+    },
+    {
+      "frame_idx": 91,
+      "forward_cm": 4.372139208525218,
+      "rotation_deg": 6.760395021220708,
+      "action_label": "turn left 7 degrees, move forward 4 cm"
+    },
+    {
+      "frame_idx": 92,
+      "forward_cm": 4.415787237023798,
+      "rotation_deg": 11.880966504312493,
+      "action_label": "turn left 12 degrees, move forward 4 cm"
+    },
+    {
+      "frame_idx": 93,
+      "forward_cm": 4.8431309004081635,
+      "rotation_deg": 11.883226166568454,
+      "action_label": "turn left 12 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 94,
+      "forward_cm": 3.650204919127652,
+      "rotation_deg": 11.844068235589976,
+      "action_label": "turn left 12 degrees, move forward 4 cm"
+    },
+    {
+      "frame_idx": 95,
+      "forward_cm": 3.609791215782001,
+      "rotation_deg": 13.283278387551121,
+      "action_label": "turn left 13 degrees, move forward 4 cm"
+    },
+    {
+      "frame_idx": 96,
+      "forward_cm": 5.695842943434712,
+      "rotation_deg": 12.313436404390222,
+      "action_label": "turn left 12 degrees, move forward 6 cm"
+    },
+    {
+      "frame_idx": 97,
+      "forward_cm": 6.002946616290862,
+      "rotation_deg": 11.431626137432957,
+      "action_label": "turn left 11 degrees, move forward 6 cm"
+    },
+    {
+      "frame_idx": 98,
+      "forward_cm": 7.339254364043186,
+      "rotation_deg": 11.660211394570258,
+      "action_label": "turn left 12 degrees, move forward 7 cm"
+    },
+    {
+      "frame_idx": 99,
+      "forward_cm": 7.011024388077071,
+      "rotation_deg": 11.93934257715629,
+      "action_label": "turn left 12 degrees, move forward 7 cm"
+    },
+    {
+      "frame_idx": 100,
+      "forward_cm": 5.2640275263788245,
+      "rotation_deg": 11.677848838242896,
+      "action_label": "turn left 12 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 101,
+      "forward_cm": 1.2081992121739138,
+      "rotation_deg": 8.348723126595443,
+      "action_label": "turn left 8 degrees, move forward 1 cm"
+    },
+    {
+      "frame_idx": 102,
+      "forward_cm": -6.666158250753157,
+      "rotation_deg": 5.5084534390029845,
+      "action_label": "turn left 6 degrees"
+    },
+    {
+      "frame_idx": 103,
+      "forward_cm": -4.567029747581958,
+      "rotation_deg": 8.834783271919962,
+      "action_label": "turn left 9 degrees"
+    },
+    {
+      "frame_idx": 104,
+      "forward_cm": -0.07621252746363924,
+      "rotation_deg": 7.58016649998478,
+      "action_label": "turn left 8 degrees"
+    },
+    {
+      "frame_idx": 105,
+      "forward_cm": 1.904726992032371,
+      "rotation_deg": 10.239280306322634,
+      "action_label": "turn left 10 degrees, move forward 2 cm"
+    },
+    {
+      "frame_idx": 106,
+      "forward_cm": 3.0754253570020333,
+      "rotation_deg": 11.015583650757305,
+      "action_label": "turn left 11 degrees, move forward 3 cm"
+    },
+    {
+      "frame_idx": 107,
+      "forward_cm": 3.043815776141597,
+      "rotation_deg": 12.072475363666685,
+      "action_label": "turn left 12 degrees, move forward 3 cm"
+    },
+    {
+      "frame_idx": 108,
+      "forward_cm": 2.9694935383259726,
+      "rotation_deg": 12.743746668945862,
+      "action_label": "turn left 13 degrees, move forward 3 cm"
+    },
+    {
+      "frame_idx": 109,
+      "forward_cm": 5.031368055047658,
+      "rotation_deg": 12.705055444607131,
+      "action_label": "turn left 13 degrees, move forward 5 cm"
+    },
+    {
+      "frame_idx": 110,
+      "forward_cm": 7.037611004218312,
+      "rotation_deg": 11.920335674558013,
+      "action_label": "turn left 12 degrees, move forward 7 cm"
+    },
+    {
+      "frame_idx": 111,
+      "forward_cm": 7.893260802219991,
+      "rotation_deg": 10.881478738493273,
+      "action_label": "turn left 11 degrees, move forward 8 cm"
+    },
+    {
+      "frame_idx": 112,
+      "forward_cm": -0.0,
+      "rotation_deg": 0.0,
+      "action_label": "stop"
+    }
+  ],
+  "merged_actions": [
+    {
+      "frame_idx": 0,
+      "action_label": "turn left 10 degrees, move forward 6 cm",
+      "merge_count": 2,
+      "forward_cm": 6.35323266777971,
+      "rotation_deg": 10.46236929945537
+    },
+    {
+      "frame_idx": 2,
+      "action_label": "turn right 20 degrees, move forward 46 cm",
+      "merge_count": 3,
+      "forward_cm": 46.035868212307804,
+      "rotation_deg": -19.82939264376778
+    },
+    {
+      "frame_idx": 5,
+      "action_label": "turn right 8 degrees, move forward 32 cm",
+      "merge_count": 2,
+      "forward_cm": 32.30631549917322,
+      "rotation_deg": -8.44633299558067
+    },
+    {
+      "frame_idx": 7,
+      "action_label": "turn left 9 degrees, move forward 24 cm",
+      "merge_count": 2,
+      "forward_cm": 23.882350096393964,
+      "rotation_deg": 8.903413233007758
+    },
+    {
+      "frame_idx": 9,
+      "action_label": "turn right 21 degrees, move forward 53 cm",
+      "merge_count": 3,
+      "forward_cm": 52.81022348449753,
+      "rotation_deg": -20.958026410959267
+    },
+    {
+      "frame_idx": 12,
+      "action_label": "turn right 21 degrees, move forward 21 cm",
+      "merge_count": 2,
+      "forward_cm": 21.228806681031756,
+      "rotation_deg": -21.025900770107363
+    },
+    {
+      "frame_idx": 14,
+      "action_label": "turn left 5 degrees, move forward 17 cm",
+      "merge_count": 1,
+      "forward_cm": 17.209565479967136,
+      "rotation_deg": 5.350964996289943
+    },
+    {
+      "frame_idx": 15,
+      "action_label": "turn right 8 degrees, move forward 30 cm",
+      "merge_count": 2,
+      "forward_cm": 29.971300576353862,
+      "rotation_deg": -8.431314349029709
+    },
+    {
+      "frame_idx": 17,
+      "action_label": "turn left 15 degrees, move forward 58 cm",
+      "merge_count": 3,
+      "forward_cm": 58.15981025390075,
+      "rotation_deg": 15.45862060685031
+    },
+    {
+      "frame_idx": 20,
+      "action_label": "turn right 5 degrees, move forward 16 cm",
+      "merge_count": 1,
+      "forward_cm": 16.199431043768215,
+      "rotation_deg": -5.154521273696551
+    },
+    {
+      "frame_idx": 21,
+      "action_label": "turn left 5 degrees, move forward 17 cm",
+      "merge_count": 1,
+      "forward_cm": 17.252953728708775,
+      "rotation_deg": 5.075364855192203
+    },
+    {
+      "frame_idx": 22,
+      "action_label": "turn right 25 degrees, move forward 49 cm",
+      "merge_count": 3,
+      "forward_cm": 49.12609445446307,
+      "rotation_deg": -24.703000373682983
+    },
+    {
+      "frame_idx": 25,
+      "action_label": "turn right 22 degrees, move forward 8 cm",
+      "merge_count": 3,
+      "forward_cm": 7.724669504393777,
+      "rotation_deg": -21.72860941346429
+    },
+    {
+      "frame_idx": 28,
+      "action_label": "turn right 4 degrees",
+      "merge_count": 2,
+      "forward_cm": -1.7418813124230665,
+      "rotation_deg": -3.8206023173347603
+    },
+    {
+      "frame_idx": 30,
+      "action_label": "turn left 2 degrees, move forward 1 cm",
+      "merge_count": 1,
+      "forward_cm": 1.4776234162800859,
+      "rotation_deg": 1.7368252916634634
+    },
+    {
+      "frame_idx": 31,
+      "action_label": "move forward 2 cm",
+      "merge_count": 1,
+      "forward_cm": 2.24885978243494,
+      "rotation_deg": 0.4294979732596758
+    },
+    {
+      "frame_idx": 32,
+      "action_label": "stop",
+      "merge_count": 1,
+      "forward_cm": 0.7005760871565536,
+      "rotation_deg": -0.8932337442344582
+    },
+    {
+      "frame_idx": 33,
+      "action_label": "turn left 1 degrees",
+      "merge_count": 1,
+      "forward_cm": 0.4344906591372317,
+      "rotation_deg": 1.495472028851109
+    },
+    {
+      "frame_idx": 34,
+      "action_label": "stop",
+      "merge_count": 1,
+      "forward_cm": 0.2599191613027131,
+      "rotation_deg": -0.3003826236431016
+    },
+    {
+      "frame_idx": 35,
+      "action_label": "turn left 1 degrees",
+      "merge_count": 1,
+      "forward_cm": 0.1092653213200432,
+      "rotation_deg": 1.2432040589358528
+    },
+    {
+      "frame_idx": 36,
+      "action_label": "stop",
+      "merge_count": 1,
+      "forward_cm": 0.2314207795011119,
+      "rotation_deg": 0.09874045081858762
+    },
+    {
+      "frame_idx": 37,
+      "action_label": "stop",
+      "merge_count": 1,
+      "forward_cm": -0.2672418646997262,
+      "rotation_deg": 0.8605067454281663
+    },
+    {
+      "frame_idx": 38,
+      "action_label": "turn left 2 degrees",
+      "merge_count": 1,
+      "forward_cm": -0.11350871434407692,
+      "rotation_deg": 1.5845209691604942
+    },
+    {
+      "frame_idx": 39,
+      "action_label": "stop",
+      "merge_count": 1,
+      "forward_cm": 0.9797951275580765,
+      "rotation_deg": 0.49145036415756066
+    },
+    {
+      "frame_idx": 40,
+      "action_label": "turn left 11 degrees, move forward 5 cm",
+      "merge_count": 3,
+      "forward_cm": 5.472298736019942,
+      "rotation_deg": 11.15709833322345
+    },
+    {
+      "frame_idx": 43,
+      "action_label": "turn left 29 degrees, move forward 19 cm",
+      "merge_count": 3,
+      "forward_cm": 18.892345259370597,
+      "rotation_deg": 28.574413053213245
+    },
+    {
+      "frame_idx": 46,
+      "action_label": "turn left 35 degrees, move forward 28 cm",
+      "merge_count": 3,
+      "forward_cm": 27.781590685353162,
+      "rotation_deg": 35.47822117832723
+    },
+    {
+      "frame_idx": 49,
+      "action_label": "turn left 35 degrees, move forward 33 cm",
+      "merge_count": 3,
+      "forward_cm": 33.273607169013054,
+      "rotation_deg": 34.80688040161505
+    },
+    {
+      "frame_idx": 52,
+      "action_label": "turn left 33 degrees, move forward 24 cm",
+      "merge_count": 3,
+      "forward_cm": 24.376042552983286,
+      "rotation_deg": 33.16615795644854
+    },
+    {
+      "frame_idx": 55,
+      "action_label": "turn left 34 degrees, move forward 22 cm",
+      "merge_count": 3,
+      "forward_cm": 21.985086482632028,
+      "rotation_deg": 33.82271622804079
+    },
+    {
+      "frame_idx": 58,
+      "action_label": "turn left 37 degrees, move forward 29 cm",
+      "merge_count": 3,
+      "forward_cm": 28.7273577487192,
+      "rotation_deg": 36.82257199527303
+    },
+    {
+      "frame_idx": 61,
+      "action_label": "turn left 38 degrees, move forward 12 cm",
+      "merge_count": 3,
+      "forward_cm": 12.328119094495174,
+      "rotation_deg": 37.775493218899875
+    },
+    {
+      "frame_idx": 64,
+      "action_label": "turn left 34 degrees, move forward 17 cm",
+      "merge_count": 3,
+      "forward_cm": 16.793447818084942,
+      "rotation_deg": 33.87683747854783
+    },
+    {
+      "frame_idx": 67,
+      "action_label": "turn left 10 degrees, move forward 7 cm",
+      "merge_count": 1,
+      "forward_cm": 7.169181301522778,
+      "rotation_deg": 10.313661615534395
+    },
+    {
+      "frame_idx": 68,
+      "action_label": "turn right 12 degrees, move forward 23 cm",
+      "merge_count": 2,
+      "forward_cm": 22.623536397827795,
+      "rotation_deg": -12.447289665341462
+    },
+    {
+      "frame_idx": 70,
+      "action_label": "turn left 28 degrees, move forward 18 cm",
+      "merge_count": 3,
+      "forward_cm": 18.380543021701293,
+      "rotation_deg": 27.909404778176494
+    },
+    {
+      "frame_idx": 73,
+      "action_label": "turn left 35 degrees, move forward 28 cm",
+      "merge_count": 3,
+      "forward_cm": 27.592402835078868,
+      "rotation_deg": 34.642784894432054
+    },
+    {
+      "frame_idx": 76,
+      "action_label": "turn left 38 degrees, move forward 26 cm",
+      "merge_count": 3,
+      "forward_cm": 26.056677005868377,
+      "rotation_deg": 37.59433456071458
+    },
+    {
+      "frame_idx": 79,
+      "action_label": "turn left 37 degrees, move forward 24 cm",
+      "merge_count": 3,
+      "forward_cm": 24.181646594872376,
+      "rotation_deg": 37.23189862679827
+    },
+    {
+      "frame_idx": 82,
+      "action_label": "turn left 36 degrees, move forward 24 cm",
+      "merge_count": 3,
+      "forward_cm": 23.968387982768025,
+      "rotation_deg": 36.331544581748744
+    },
+    {
+      "frame_idx": 85,
+      "action_label": "turn left 35 degrees, move forward 31 cm",
+      "merge_count": 3,
+      "forward_cm": 31.399038291421853,
+      "rotation_deg": 35.01149865991564
+    },
+    {
+      "frame_idx": 88,
+      "action_label": "turn left 31 degrees, move forward 19 cm",
+      "merge_count": 3,
+      "forward_cm": 19.286423521913374,
+      "rotation_deg": 30.761004577933065
+    },
+    {
+      "frame_idx": 91,
+      "action_label": "turn left 31 degrees, move forward 14 cm",
+      "merge_count": 3,
+      "forward_cm": 13.631057345957178,
+      "rotation_deg": 30.524587692101655
+    },
+    {
+      "frame_idx": 94,
+      "action_label": "turn left 37 degrees, move forward 13 cm",
+      "merge_count": 3,
+      "forward_cm": 12.955839078344365,
+      "rotation_deg": 37.44078302753132
+    },
+    {
+      "frame_idx": 97,
+      "action_label": "turn left 35 degrees, move forward 20 cm",
+      "merge_count": 3,
+      "forward_cm": 20.35322536841112,
+      "rotation_deg": 35.03118010915951
+    },
+    {
+      "frame_idx": 100,
+      "action_label": "turn left 26 degrees",
+      "merge_count": 3,
+      "forward_cm": -0.19393151220041904,
+      "rotation_deg": 25.535025403841324
+    },
+    {
+      "frame_idx": 103,
+      "action_label": "turn left 27 degrees",
+      "merge_count": 3,
+      "forward_cm": -2.7385152830132258,
+      "rotation_deg": 26.654230078227375
+    },
+    {
+      "frame_idx": 106,
+      "action_label": "turn left 36 degrees, move forward 9 cm",
+      "merge_count": 3,
+      "forward_cm": 9.088734671469602,
+      "rotation_deg": 35.83180568336985
+    },
+    {
+      "frame_idx": 109,
+      "action_label": "turn left 36 degrees, move forward 20 cm",
+      "merge_count": 3,
+      "forward_cm": 19.962239861485962,
+      "rotation_deg": 35.506869857658415
+    },
+    {
+      "frame_idx": 112,
+      "action_label": "stop",
+      "merge_count": 1,
+      "forward_cm": -0.0,
+      "rotation_deg": 0.0
+    }
+  ],
+  "lighting_randomization": {
+    "distant_light": {
+      "prim_path": "/World/light",
+      "intensity": 3231.3088458524962,
+      "color": [
+        0.9471560415409559,
+        0.7575028668460223,
+        0.9231275656459308
+      ],
+      "applied": true
+    },
+    "dome_light": {
+      "prim_path": "/World/skyLight",
+      "intensity": 1095.0207119761703,
+      "color": [
+        0.14242593430794034,
+        0.13719318300086775,
+        0.13624052057082126
+      ],
+      "applied": true
+    }
+  }
+}

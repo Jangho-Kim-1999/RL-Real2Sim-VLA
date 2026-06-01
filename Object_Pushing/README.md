@@ -48,3 +48,20 @@ In MATLAB:
 ```matlab
 run('Object_Pushing/play_logs/eval/plot_object_pushing_play_log.m')
 ```
+
+Collect NaVILA-style VLA fine-tuning data from the trained pushing expert:
+
+```bash
+python3 Object_Pushing/scripts/collect_vla_push_data.py \
+  --task mclquad_object_pushing_r7_camera_play \
+  --load_run <run_folder> \
+  --checkpoint <checkpoint.pt> \
+  --episodes 5000 \
+  --save_dir Object_Pushing/vla_push_dataset
+```
+
+The collector saves successful episodes only, including PNG frames, per-episode
+metadata, `samples_index.json`, and a NaVILA `vlnce`-style `annotations.json`.
+The local NaVILA checkout registers this dataset as `mclquad_push`, so it can be
+blended with existing navigation data through `--data_mixture r2r+mclquad_push`
+after collection.

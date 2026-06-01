@@ -33,16 +33,117 @@ parser.add_argument("--log_limit", type=int, default=0, help="Maximum number of 
 parser.add_argument("--log_env_id", type=int, default=0, help="Environment index to log.")
 parser.add_argument("--log_mat", action="store_true", help="Also save a MATLAB .mat file. Requires scipy.")
 parser.add_argument("--log_mat_file", type=str, default="object_pushing_play_log.mat", help="MATLAB .mat filename.")
+parser.add_argument("--save_camera_pngs", action="store_true", help="Save robot camera RGB frames as PNG files.")
+parser.add_argument("--camera_name", type=str, default="front_rgb_camera", help="Scene camera sensor name to save.")
+parser.add_argument("--camera_save_period_s", type=float, default=1.0, help="Camera PNG save period in seconds.")
+parser.add_argument("--camera_save_dir", type=str, default=None, help="Directory for saved camera PNGs.")
+parser.add_argument(
+    "--object_diameter_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override pushing object diameter range in meters. Use same values for a fixed size.",
+)
+parser.add_argument(
+    "--object_height_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override pushing object height range in meters. Use same values for a fixed size.",
+)
 parser.add_argument(
     "--plot_matlab_script_file",
     type=str,
     default="plot_object_pushing_play_log.m",
     help="MATLAB plotting script filename.",
 )
+parser.add_argument(
+    "--object_xy_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override object spawn local X/Y range in meters. Example: --object_xy_range -0.5 0.5",
+)
+parser.add_argument(
+    "--object_yaw_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override initial object yaw range in radians.",
+)
+parser.add_argument(
+    "--robot_radius_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override initial robot-object distance range in meters.",
+)
+parser.add_argument(
+    "--target_distance_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override initial object-target distance range in meters.",
+)
+parser.add_argument(
+    "--target_angle_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override target direction angle range around the object in radians.",
+)
+parser.add_argument(
+    "--robot_lateral_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override robot lateral offset from object-target line in meters.",
+)
+parser.add_argument(
+    "--robot_yaw_noise_range",
+    type=float,
+    nargs=2,
+    metavar=("MIN", "MAX"),
+    default=None,
+    help="Override robot yaw noise around target direction in radians.",
+)
+parser.add_argument(
+    "--disable_spawn_curriculum",
+    action="store_true",
+    help="Disable spawn-distance curriculum during play and use reset ranges directly.",
+)
+parser.add_argument(
+    "--independent_spawn",
+    action="store_true",
+    help="Sample robot, object, and target independently from absolute local XY/yaw ranges.",
+)
+parser.add_argument(
+    "--spawn_polygon_vertices",
+    type=float,
+    nargs="+",
+    default=None,
+    help="Shared polygon for independent spawn as x1 y1 x2 y2 ... in local scene coordinates.",
+)
+parser.add_argument("--object_x_range", type=float, nargs=2, metavar=("MIN", "MAX"), default=None)
+parser.add_argument("--object_y_range", type=float, nargs=2, metavar=("MIN", "MAX"), default=None)
+parser.add_argument("--robot_x_range", type=float, nargs=2, metavar=("MIN", "MAX"), default=None)
+parser.add_argument("--robot_y_range", type=float, nargs=2, metavar=("MIN", "MAX"), default=None)
+parser.add_argument("--robot_yaw_range", type=float, nargs=2, metavar=("MIN", "MAX"), default=None)
+parser.add_argument("--target_x_range", type=float, nargs=2, metavar=("MIN", "MAX"), default=None)
+parser.add_argument("--target_y_range", type=float, nargs=2, metavar=("MIN", "MAX"), default=None)
+parser.add_argument("--target_yaw_range", type=float, nargs=2, metavar=("MIN", "MAX"), default=None)
 cli_args.add_rsl_rl_args(parser)
 AppLauncher.add_app_launcher_args(parser)
 args_cli = parser.parse_args()
-args_cli.enable_cameras = args_cli.video
+args_cli.enable_cameras = args_cli.video or args_cli.save_camera_pngs or "camera" in args_cli.task
 
 app_launcher = AppLauncher(args_cli)
 simulation_app = app_launcher.app
@@ -57,6 +158,7 @@ from rsl_rl.runners import OnPolicyRunner
 
 import object_pushing  # noqa: F401
 from object_pushing.plain_rsl_rl_wrapper import PlainRslRlVecEnvWrapper
+from object_pushing.vla_dataset import to_pil_rgb
 
 
 LOG_FIELDS = [
@@ -142,6 +244,38 @@ def _capture_metrics(env: PlainRslRlVecEnvWrapper, step: int, actions: torch.Ten
     }
 
 
+def _capture_camera_rgb(base_env, camera_name: str, env_id: int = 0):
+    sensor = base_env.scene.sensors.get(camera_name)
+    if sensor is None:
+        raise RuntimeError(f"Camera sensor {camera_name!r} was not found in this scene.")
+    if "rgb" not in sensor.data.output:
+        base_env.sim.render()
+    if "rgb" not in sensor.data.output:
+        raise RuntimeError(f"Camera sensor {camera_name!r} has no rgb output.")
+
+    image = sensor.data.output["rgb"][env_id]
+    if torch.is_tensor(image):
+        image = image.detach().cpu()
+        if image.ndim == 3 and image.shape[0] in (3, 4) and image.shape[-1] not in (3, 4):
+            image = image.permute(1, 2, 0)
+        image = image.numpy()
+    return to_pil_rgb(image)
+
+
+def _save_camera_png(
+    env: PlainRslRlVecEnvWrapper,
+    camera_dir: str,
+    camera_name: str,
+    step: int,
+    time_s: float,
+    env_id: int,
+) -> str:
+    image = _capture_camera_rgb(env.unwrapped, camera_name, env_id)
+    image_path = os.path.join(camera_dir, f"{camera_name}_step{step:06d}_t{time_s:07.2f}s.png")
+    image.save(image_path)
+    return image_path
+
+
 def _write_matlab_plot_script(script_path: str, csv_path: str) -> None:
     csv_name = os.path.basename(csv_path)
     script = f"""clear; clc; close all;
@@ -200,6 +334,109 @@ def _save_mat_file(mat_path: str, rows: list[dict[str, float]]) -> bool:
     return True
 
 
+def _range_arg(value: list[float] | None) -> tuple[float, float] | None:
+    if value is None:
+        return None
+    range_min = float(min(value))
+    range_max = float(max(value))
+    return range_min, range_max
+
+
+def _polygon_arg(value: list[float] | None) -> tuple[float, ...] | None:
+    if value is None:
+        return None
+    if len(value) < 6 or len(value) % 2 != 0:
+        raise ValueError("--spawn_polygon_vertices must contain x y pairs for at least three vertices.")
+    return tuple(float(item) for item in value)
+
+
+def _apply_spawn_overrides(env_cfg) -> None:
+    reset_params = env_cfg.events.reset_scene.params
+    if reset_params is None:
+        reset_params = {}
+        env_cfg.events.reset_scene.params = reset_params
+
+    curriculum_params = None
+    spawn_curriculum = getattr(env_cfg.curriculum, "spawn_distances", None)
+    if spawn_curriculum is not None:
+        curriculum_params = spawn_curriculum.params
+        if curriculum_params is None:
+            curriculum_params = {}
+            spawn_curriculum.params = curriculum_params
+
+    overrides = {
+        "independent_spawn": True if args_cli.independent_spawn or args_cli.spawn_polygon_vertices is not None else None,
+        "spawn_polygon_vertices": _polygon_arg(args_cli.spawn_polygon_vertices),
+        "object_x_range": _range_arg(args_cli.object_x_range),
+        "object_y_range": _range_arg(args_cli.object_y_range),
+        "object_xy_range": _range_arg(args_cli.object_xy_range),
+        "object_yaw_range": _range_arg(args_cli.object_yaw_range),
+        "robot_x_range": _range_arg(args_cli.robot_x_range),
+        "robot_y_range": _range_arg(args_cli.robot_y_range),
+        "robot_yaw_range": _range_arg(args_cli.robot_yaw_range),
+        "target_x_range": _range_arg(args_cli.target_x_range),
+        "target_y_range": _range_arg(args_cli.target_y_range),
+        "target_yaw_range": _range_arg(args_cli.target_yaw_range),
+        "robot_radius_range": _range_arg(args_cli.robot_radius_range),
+        "target_distance_range": _range_arg(args_cli.target_distance_range),
+        "target_angle_range": _range_arg(args_cli.target_angle_range),
+        "robot_lateral_range": _range_arg(args_cli.robot_lateral_range),
+        "robot_yaw_noise_range": _range_arg(args_cli.robot_yaw_noise_range),
+    }
+    active_overrides = {key: value for key, value in overrides.items() if value is not None}
+    reset_params.update(active_overrides)
+
+    curriculum_range_map = {
+        "robot_radius_range": ("robot_radius_start_range", "robot_radius_end_range"),
+        "target_distance_range": ("target_distance_start_range", "target_distance_end_range"),
+        "robot_lateral_range": ("robot_lateral_start_range", "robot_lateral_end_range"),
+        "robot_yaw_noise_range": ("robot_yaw_noise_start_range", "robot_yaw_noise_end_range"),
+    }
+    if args_cli.disable_spawn_curriculum:
+        env_cfg.curriculum.spawn_distances = None
+    elif curriculum_params is not None:
+        for reset_key, curriculum_keys in curriculum_range_map.items():
+            if overrides[reset_key] is None:
+                continue
+            for curriculum_key in curriculum_keys:
+                curriculum_params[curriculum_key] = overrides[reset_key]
+
+    if active_overrides:
+        print("[INFO] Play spawn range overrides:")
+        for key, value in active_overrides.items():
+            print(f"       {key}={value}")
+        if args_cli.disable_spawn_curriculum:
+            print("[INFO] Spawn curriculum disabled for play.")
+        else:
+            print("[INFO] Matching curriculum start/end ranges were overridden for fixed play ranges.")
+    elif args_cli.disable_spawn_curriculum:
+        env_cfg.curriculum.spawn_distances = None
+        print("[INFO] Spawn curriculum disabled for play.")
+
+
+def _apply_object_geometry_overrides(env_cfg) -> None:
+    object_geometry = getattr(env_cfg.events, "object_geometry", None)
+    if object_geometry is None:
+        return
+    if object_geometry.params is None:
+        object_geometry.params = {}
+
+    active_overrides = {}
+    diameter_range = _range_arg(args_cli.object_diameter_range)
+    height_range = _range_arg(args_cli.object_height_range)
+    if diameter_range is not None:
+        object_geometry.params["diameter_range"] = diameter_range
+        active_overrides["diameter_range"] = diameter_range
+    if height_range is not None:
+        object_geometry.params["height_range"] = height_range
+        active_overrides["height_range"] = height_range
+
+    if active_overrides:
+        print("[INFO] Object geometry overrides:")
+        for key, value in active_overrides.items():
+            print(f"       {key}={value}")
+
+
 def main() -> None:
     env_cfg = parse_env_cfg(
         args_cli.task,
@@ -207,6 +444,8 @@ def main() -> None:
         num_envs=args_cli.num_envs,
         use_fabric=not args_cli.disable_fabric,
     )
+    _apply_spawn_overrides(env_cfg)
+    _apply_object_geometry_overrides(env_cfg)
     agent_cfg = cli_args.parse_rsl_rl_cfg(args_cli.task, args_cli)
     log_root_path = os.path.join(_OBJECT_PUSHING_DIR, "logs", "rsl_rl", agent_cfg.experiment_name)
     if args_cli.no_checkpoint:
@@ -260,8 +499,27 @@ def main() -> None:
     logged_rows: list[dict[str, float]] = []
     print(f"[INFO] Logging env {log_env_id} play metrics to: {csv_path}")
 
+    sim_dt = float(getattr(env.unwrapped.cfg.sim, "dt", 0.0))
+    decimation = int(getattr(env.unwrapped.cfg, "decimation", 1))
+    high_level_dt = max(sim_dt * decimation, 1.0e-6)
+    camera_save_dir = args_cli.camera_save_dir or os.path.join(play_log_dir, "camera_pngs")
+    camera_period_s = max(float(args_cli.camera_save_period_s), high_level_dt)
+    camera_period_steps = max(1, int(round(camera_period_s / high_level_dt)))
+    saved_camera_count = 0
+    if args_cli.save_camera_pngs:
+        os.makedirs(camera_save_dir, exist_ok=True)
+        print(
+            f"[INFO] Saving {args_cli.camera_name} PNGs every "
+            f"{camera_period_steps} high-level steps (~{camera_period_steps * high_level_dt:.3f}s) to: "
+            f"{camera_save_dir}"
+        )
+
     obs, _ = env.get_observations()
     step = 0
+    if args_cli.save_camera_pngs:
+        env.unwrapped.sim.render()
+        _save_camera_png(env, camera_save_dir, args_cli.camera_name, step, 0.0, log_env_id)
+        saved_camera_count += 1
     while simulation_app.is_running():
         with torch.inference_mode():
             actions = policy(obs)
@@ -273,6 +531,9 @@ def main() -> None:
                 row["done"] = int(dones[log_env_id].item())
                 logged_rows.append(row)
         step += 1
+        if args_cli.save_camera_pngs and step % camera_period_steps == 0:
+            _save_camera_png(env, camera_save_dir, args_cli.camera_name, step, step * high_level_dt, log_env_id)
+            saved_camera_count += 1
         if step % 25 == 0:
             print(
                 f"[INFO] step={step} reward0={float(rewards[0]):.3f} "
@@ -289,6 +550,8 @@ def main() -> None:
     if args_cli.log_mat:
         if _save_mat_file(mat_path, logged_rows):
             print(f"[INFO] Saved MATLAB MAT log: {mat_path}")
+    if args_cli.save_camera_pngs:
+        print(f"[INFO] Saved {saved_camera_count} camera PNGs: {camera_save_dir}")
     print(f"[INFO] Saved CSV log: {csv_path}")
     print(f"[INFO] Saved MATLAB plot script: {matlab_script_path}")
     env.close()

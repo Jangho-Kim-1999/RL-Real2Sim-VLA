@@ -1,0 +1,2788 @@
+[
+  {
+    "id": "push_ep0000_step000",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [],
+    "history_frame_paths": [],
+    "current_idx": 0,
+    "current_frame_path": "episode_0000/frames/frame_000.png",
+    "action_label": "turn right 27 degrees",
+    "merge_count": 3,
+    "forward_cm": -43.46427496139969,
+    "rotation_deg": -26.720375047779896
+  },
+  {
+    "id": "push_ep0000_step003",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      2
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_001.png",
+      "episode_0000/frames/frame_002.png"
+    ],
+    "current_idx": 3,
+    "current_frame_path": "episode_0000/frames/frame_003.png",
+    "action_label": "turn right 7 degrees",
+    "merge_count": 1,
+    "forward_cm": -1.8446175188683023,
+    "rotation_deg": -6.967053694854458
+  },
+  {
+    "id": "push_ep0000_step004",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_001.png",
+      "episode_0000/frames/frame_002.png",
+      "episode_0000/frames/frame_003.png"
+    ],
+    "current_idx": 4,
+    "current_frame_path": "episode_0000/frames/frame_004.png",
+    "action_label": "turn left 21 degrees, move forward 27 cm",
+    "merge_count": 3,
+    "forward_cm": 27.02650865175172,
+    "rotation_deg": 21.27111946763283
+  },
+  {
+    "id": "push_ep0000_step007",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_001.png",
+      "episode_0000/frames/frame_002.png",
+      "episode_0000/frames/frame_003.png",
+      "episode_0000/frames/frame_004.png",
+      "episode_0000/frames/frame_005.png",
+      "episode_0000/frames/frame_006.png"
+    ],
+    "current_idx": 7,
+    "current_frame_path": "episode_0000/frames/frame_007.png",
+    "action_label": "turn left 1 degrees, move forward 14 cm",
+    "merge_count": 1,
+    "forward_cm": 13.890693636014836,
+    "rotation_deg": 1.4200378611607078
+  },
+  {
+    "id": "push_ep0000_step008",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_001.png",
+      "episode_0000/frames/frame_002.png",
+      "episode_0000/frames/frame_003.png",
+      "episode_0000/frames/frame_004.png",
+      "episode_0000/frames/frame_005.png",
+      "episode_0000/frames/frame_007.png"
+    ],
+    "current_idx": 8,
+    "current_frame_path": "episode_0000/frames/frame_008.png",
+    "action_label": "turn right 16 degrees, move forward 13 cm",
+    "merge_count": 3,
+    "forward_cm": 13.087803090325309,
+    "rotation_deg": -16.20164038842769
+  },
+  {
+    "id": "push_ep0000_step011",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      3,
+      5,
+      6,
+      8,
+      10
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_001.png",
+      "episode_0000/frames/frame_003.png",
+      "episode_0000/frames/frame_005.png",
+      "episode_0000/frames/frame_006.png",
+      "episode_0000/frames/frame_008.png",
+      "episode_0000/frames/frame_010.png"
+    ],
+    "current_idx": 11,
+    "current_frame_path": "episode_0000/frames/frame_011.png",
+    "action_label": "turn right 34 degrees",
+    "merge_count": 3,
+    "forward_cm": -5.472795407111256,
+    "rotation_deg": -33.64015864523235
+  },
+  {
+    "id": "push_ep0000_step014",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      13
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_002.png",
+      "episode_0000/frames/frame_004.png",
+      "episode_0000/frames/frame_006.png",
+      "episode_0000/frames/frame_008.png",
+      "episode_0000/frames/frame_010.png",
+      "episode_0000/frames/frame_013.png"
+    ],
+    "current_idx": 14,
+    "current_frame_path": "episode_0000/frames/frame_014.png",
+    "action_label": "turn right 30 degrees",
+    "merge_count": 3,
+    "forward_cm": -10.625031054825651,
+    "rotation_deg": -30.287781694550986
+  },
+  {
+    "id": "push_ep0000_step017",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      2,
+      5,
+      8,
+      10,
+      13,
+      16
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_002.png",
+      "episode_0000/frames/frame_005.png",
+      "episode_0000/frames/frame_008.png",
+      "episode_0000/frames/frame_010.png",
+      "episode_0000/frames/frame_013.png",
+      "episode_0000/frames/frame_016.png"
+    ],
+    "current_idx": 17,
+    "current_frame_path": "episode_0000/frames/frame_017.png",
+    "action_label": "turn right 30 degrees, move forward 6 cm",
+    "merge_count": 3,
+    "forward_cm": 5.866769259833961,
+    "rotation_deg": -30.362102932155985
+  },
+  {
+    "id": "push_ep0000_step020",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      19
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_003.png",
+      "episode_0000/frames/frame_006.png",
+      "episode_0000/frames/frame_009.png",
+      "episode_0000/frames/frame_012.png",
+      "episode_0000/frames/frame_015.png",
+      "episode_0000/frames/frame_019.png"
+    ],
+    "current_idx": 20,
+    "current_frame_path": "episode_0000/frames/frame_020.png",
+    "action_label": "turn right 23 degrees, move forward 19 cm",
+    "merge_count": 3,
+    "forward_cm": 18.699561175324042,
+    "rotation_deg": -23.39505045286413
+  },
+  {
+    "id": "push_ep0000_step023",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      3,
+      7,
+      11,
+      14,
+      18,
+      22
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_003.png",
+      "episode_0000/frames/frame_007.png",
+      "episode_0000/frames/frame_011.png",
+      "episode_0000/frames/frame_014.png",
+      "episode_0000/frames/frame_018.png",
+      "episode_0000/frames/frame_022.png"
+    ],
+    "current_idx": 23,
+    "current_frame_path": "episode_0000/frames/frame_023.png",
+    "action_label": "turn left 6 degrees, move forward 7 cm",
+    "merge_count": 1,
+    "forward_cm": 6.926383164740487,
+    "rotation_deg": 5.568332295922349
+  },
+  {
+    "id": "push_ep0000_step024",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      3,
+      7,
+      11,
+      15,
+      19,
+      23
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_003.png",
+      "episode_0000/frames/frame_007.png",
+      "episode_0000/frames/frame_011.png",
+      "episode_0000/frames/frame_015.png",
+      "episode_0000/frames/frame_019.png",
+      "episode_0000/frames/frame_023.png"
+    ],
+    "current_idx": 24,
+    "current_frame_path": "episode_0000/frames/frame_024.png",
+    "action_label": "turn right 4 degrees",
+    "merge_count": 1,
+    "forward_cm": -0.39797972273155413,
+    "rotation_deg": -3.99336459676404
+  },
+  {
+    "id": "push_ep0000_step025",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_004.png",
+      "episode_0000/frames/frame_008.png",
+      "episode_0000/frames/frame_012.png",
+      "episode_0000/frames/frame_016.png",
+      "episode_0000/frames/frame_020.png",
+      "episode_0000/frames/frame_024.png"
+    ],
+    "current_idx": 25,
+    "current_frame_path": "episode_0000/frames/frame_025.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": -6.1213599753446735,
+    "rotation_deg": 0.5180578146490525
+  },
+  {
+    "id": "push_ep0000_step026",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      25
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_004.png",
+      "episode_0000/frames/frame_008.png",
+      "episode_0000/frames/frame_012.png",
+      "episode_0000/frames/frame_016.png",
+      "episode_0000/frames/frame_020.png",
+      "episode_0000/frames/frame_025.png"
+    ],
+    "current_idx": 26,
+    "current_frame_path": "episode_0000/frames/frame_026.png",
+    "action_label": "turn left 31 degrees, move forward 23 cm",
+    "merge_count": 3,
+    "forward_cm": 22.996919853292408,
+    "rotation_deg": 30.601386557572418
+  },
+  {
+    "id": "push_ep0000_step029",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      4,
+      9,
+      14,
+      18,
+      23,
+      28
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_004.png",
+      "episode_0000/frames/frame_009.png",
+      "episode_0000/frames/frame_014.png",
+      "episode_0000/frames/frame_018.png",
+      "episode_0000/frames/frame_023.png",
+      "episode_0000/frames/frame_028.png"
+    ],
+    "current_idx": 29,
+    "current_frame_path": "episode_0000/frames/frame_029.png",
+    "action_label": "turn left 38 degrees, move forward 17 cm",
+    "merge_count": 3,
+    "forward_cm": 17.23459674782262,
+    "rotation_deg": 38.00680551132886
+  },
+  {
+    "id": "push_ep0000_step032",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      31
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_005.png",
+      "episode_0000/frames/frame_010.png",
+      "episode_0000/frames/frame_015.png",
+      "episode_0000/frames/frame_020.png",
+      "episode_0000/frames/frame_025.png",
+      "episode_0000/frames/frame_031.png"
+    ],
+    "current_idx": 32,
+    "current_frame_path": "episode_0000/frames/frame_032.png",
+    "action_label": "turn left 37 degrees, move forward 20 cm",
+    "merge_count": 3,
+    "forward_cm": 19.89060786180675,
+    "rotation_deg": 37.2387427925563
+  },
+  {
+    "id": "push_ep0000_step035",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      5,
+      11,
+      17,
+      22,
+      28,
+      34
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_005.png",
+      "episode_0000/frames/frame_011.png",
+      "episode_0000/frames/frame_017.png",
+      "episode_0000/frames/frame_022.png",
+      "episode_0000/frames/frame_028.png",
+      "episode_0000/frames/frame_034.png"
+    ],
+    "current_idx": 35,
+    "current_frame_path": "episode_0000/frames/frame_035.png",
+    "action_label": "turn left 37 degrees, move forward 28 cm",
+    "merge_count": 3,
+    "forward_cm": 28.422906331696385,
+    "rotation_deg": 37.06991567139456
+  },
+  {
+    "id": "push_ep0000_step038",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      6,
+      12,
+      18,
+      24,
+      30,
+      37
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_006.png",
+      "episode_0000/frames/frame_012.png",
+      "episode_0000/frames/frame_018.png",
+      "episode_0000/frames/frame_024.png",
+      "episode_0000/frames/frame_030.png",
+      "episode_0000/frames/frame_037.png"
+    ],
+    "current_idx": 38,
+    "current_frame_path": "episode_0000/frames/frame_038.png",
+    "action_label": "turn left 18 degrees, move forward 15 cm",
+    "merge_count": 3,
+    "forward_cm": 14.594032471623727,
+    "rotation_deg": 17.76067545329526
+  },
+  {
+    "id": "push_ep0000_step041",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      6,
+      13,
+      20,
+      26,
+      33,
+      40
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_006.png",
+      "episode_0000/frames/frame_013.png",
+      "episode_0000/frames/frame_020.png",
+      "episode_0000/frames/frame_026.png",
+      "episode_0000/frames/frame_033.png",
+      "episode_0000/frames/frame_040.png"
+    ],
+    "current_idx": 41,
+    "current_frame_path": "episode_0000/frames/frame_041.png",
+    "action_label": "turn left 34 degrees, move forward 10 cm",
+    "merge_count": 3,
+    "forward_cm": 9.77946383863224,
+    "rotation_deg": 34.03228896240906
+  },
+  {
+    "id": "push_ep0000_step044",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      7,
+      14,
+      21,
+      28,
+      35,
+      43
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_007.png",
+      "episode_0000/frames/frame_014.png",
+      "episode_0000/frames/frame_021.png",
+      "episode_0000/frames/frame_028.png",
+      "episode_0000/frames/frame_035.png",
+      "episode_0000/frames/frame_043.png"
+    ],
+    "current_idx": 44,
+    "current_frame_path": "episode_0000/frames/frame_044.png",
+    "action_label": "turn left 38 degrees, move forward 8 cm",
+    "merge_count": 3,
+    "forward_cm": 8.328570129515953,
+    "rotation_deg": 37.86427197098286
+  },
+  {
+    "id": "push_ep0000_step047",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      7,
+      15,
+      23,
+      30,
+      38,
+      46
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_007.png",
+      "episode_0000/frames/frame_015.png",
+      "episode_0000/frames/frame_023.png",
+      "episode_0000/frames/frame_030.png",
+      "episode_0000/frames/frame_038.png",
+      "episode_0000/frames/frame_046.png"
+    ],
+    "current_idx": 47,
+    "current_frame_path": "episode_0000/frames/frame_047.png",
+    "action_label": "turn left 36 degrees, move forward 18 cm",
+    "merge_count": 3,
+    "forward_cm": 18.213003841993366,
+    "rotation_deg": 36.109833112301104
+  },
+  {
+    "id": "push_ep0000_step050",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      40,
+      49
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_008.png",
+      "episode_0000/frames/frame_016.png",
+      "episode_0000/frames/frame_024.png",
+      "episode_0000/frames/frame_032.png",
+      "episode_0000/frames/frame_040.png",
+      "episode_0000/frames/frame_049.png"
+    ],
+    "current_idx": 50,
+    "current_frame_path": "episode_0000/frames/frame_050.png",
+    "action_label": "turn left 36 degrees, move forward 15 cm",
+    "merge_count": 3,
+    "forward_cm": 15.347168375555558,
+    "rotation_deg": 35.66280192529654
+  },
+  {
+    "id": "push_ep0000_step053",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      8,
+      17,
+      26,
+      34,
+      43,
+      52
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_008.png",
+      "episode_0000/frames/frame_017.png",
+      "episode_0000/frames/frame_026.png",
+      "episode_0000/frames/frame_034.png",
+      "episode_0000/frames/frame_043.png",
+      "episode_0000/frames/frame_052.png"
+    ],
+    "current_idx": 53,
+    "current_frame_path": "episode_0000/frames/frame_053.png",
+    "action_label": "turn left 10 degrees, move forward 10 cm",
+    "merge_count": 1,
+    "forward_cm": 9.900258989992619,
+    "rotation_deg": 10.037029427792003
+  },
+  {
+    "id": "push_ep0000_step054",
+    "episode_id": 0,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      8,
+      17,
+      26,
+      35,
+      44,
+      53
+    ],
+    "history_frame_paths": [
+      "episode_0000/frames/frame_000.png",
+      "episode_0000/frames/frame_008.png",
+      "episode_0000/frames/frame_017.png",
+      "episode_0000/frames/frame_026.png",
+      "episode_0000/frames/frame_035.png",
+      "episode_0000/frames/frame_044.png",
+      "episode_0000/frames/frame_053.png"
+    ],
+    "current_idx": 54,
+    "current_frame_path": "episode_0000/frames/frame_054.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": 0.0,
+    "rotation_deg": 0.0
+  },
+  {
+    "id": "push_ep0001_step000",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [],
+    "history_frame_paths": [],
+    "current_idx": 0,
+    "current_frame_path": "episode_0001/frames/frame_000.png",
+    "action_label": "turn left 7 degrees",
+    "merge_count": 3,
+    "forward_cm": -46.88503540776321,
+    "rotation_deg": 7.20297064744147
+  },
+  {
+    "id": "push_ep0001_step003",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      2
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_001.png",
+      "episode_0001/frames/frame_002.png"
+    ],
+    "current_idx": 3,
+    "current_frame_path": "episode_0001/frames/frame_003.png",
+    "action_label": "turn left 27 degrees",
+    "merge_count": 3,
+    "forward_cm": -57.250758890475765,
+    "rotation_deg": 26.594749754908904
+  },
+  {
+    "id": "push_ep0001_step006",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_001.png",
+      "episode_0001/frames/frame_002.png",
+      "episode_0001/frames/frame_003.png",
+      "episode_0001/frames/frame_004.png",
+      "episode_0001/frames/frame_005.png"
+    ],
+    "current_idx": 6,
+    "current_frame_path": "episode_0001/frames/frame_006.png",
+    "action_label": "turn left 34 degrees",
+    "merge_count": 3,
+    "forward_cm": -60.48490810797267,
+    "rotation_deg": 33.97607553952243
+  },
+  {
+    "id": "push_ep0001_step009",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_001.png",
+      "episode_0001/frames/frame_002.png",
+      "episode_0001/frames/frame_004.png",
+      "episode_0001/frames/frame_005.png",
+      "episode_0001/frames/frame_006.png",
+      "episode_0001/frames/frame_008.png"
+    ],
+    "current_idx": 9,
+    "current_frame_path": "episode_0001/frames/frame_009.png",
+    "action_label": "turn left 30 degrees",
+    "merge_count": 3,
+    "forward_cm": -7.1657269187618775,
+    "rotation_deg": 29.65582496882145
+  },
+  {
+    "id": "push_ep0001_step012",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_001.png",
+      "episode_0001/frames/frame_003.png",
+      "episode_0001/frames/frame_005.png",
+      "episode_0001/frames/frame_007.png",
+      "episode_0001/frames/frame_009.png",
+      "episode_0001/frames/frame_011.png"
+    ],
+    "current_idx": 12,
+    "current_frame_path": "episode_0001/frames/frame_012.png",
+    "action_label": "turn left 29 degrees, move forward 35 cm",
+    "merge_count": 3,
+    "forward_cm": 35.18088024476154,
+    "rotation_deg": 28.82730938450851
+  },
+  {
+    "id": "push_ep0001_step015",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      2,
+      4,
+      7,
+      9,
+      11,
+      14
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_002.png",
+      "episode_0001/frames/frame_004.png",
+      "episode_0001/frames/frame_007.png",
+      "episode_0001/frames/frame_009.png",
+      "episode_0001/frames/frame_011.png",
+      "episode_0001/frames/frame_014.png"
+    ],
+    "current_idx": 15,
+    "current_frame_path": "episode_0001/frames/frame_015.png",
+    "action_label": "turn left 31 degrees, move forward 38 cm",
+    "merge_count": 3,
+    "forward_cm": 37.79063711747261,
+    "rotation_deg": 31.48748605545779
+  },
+  {
+    "id": "push_ep0001_step018",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      2,
+      5,
+      8,
+      11,
+      14,
+      17
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_002.png",
+      "episode_0001/frames/frame_005.png",
+      "episode_0001/frames/frame_008.png",
+      "episode_0001/frames/frame_011.png",
+      "episode_0001/frames/frame_014.png",
+      "episode_0001/frames/frame_017.png"
+    ],
+    "current_idx": 18,
+    "current_frame_path": "episode_0001/frames/frame_018.png",
+    "action_label": "turn left 33 degrees, move forward 39 cm",
+    "merge_count": 3,
+    "forward_cm": 38.77766761919979,
+    "rotation_deg": 33.360777860667284
+  },
+  {
+    "id": "push_ep0001_step021",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      3,
+      6,
+      10,
+      13,
+      16,
+      20
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_003.png",
+      "episode_0001/frames/frame_006.png",
+      "episode_0001/frames/frame_010.png",
+      "episode_0001/frames/frame_013.png",
+      "episode_0001/frames/frame_016.png",
+      "episode_0001/frames/frame_020.png"
+    ],
+    "current_idx": 21,
+    "current_frame_path": "episode_0001/frames/frame_021.png",
+    "action_label": "turn left 14 degrees, move forward 31 cm",
+    "merge_count": 2,
+    "forward_cm": 31.494890982309087,
+    "rotation_deg": 14.411591089420329
+  },
+  {
+    "id": "push_ep0001_step023",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      3,
+      7,
+      11,
+      14,
+      18,
+      22
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_003.png",
+      "episode_0001/frames/frame_007.png",
+      "episode_0001/frames/frame_011.png",
+      "episode_0001/frames/frame_014.png",
+      "episode_0001/frames/frame_018.png",
+      "episode_0001/frames/frame_022.png"
+    ],
+    "current_idx": 23,
+    "current_frame_path": "episode_0001/frames/frame_023.png",
+    "action_label": "turn right 2 degrees, move forward 13 cm",
+    "merge_count": 1,
+    "forward_cm": 12.520850210526897,
+    "rotation_deg": -1.6981971778940126
+  },
+  {
+    "id": "push_ep0001_step024",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      3,
+      7,
+      11,
+      15,
+      19,
+      23
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_003.png",
+      "episode_0001/frames/frame_007.png",
+      "episode_0001/frames/frame_011.png",
+      "episode_0001/frames/frame_015.png",
+      "episode_0001/frames/frame_019.png",
+      "episode_0001/frames/frame_023.png"
+    ],
+    "current_idx": 24,
+    "current_frame_path": "episode_0001/frames/frame_024.png",
+    "action_label": "turn left 30 degrees, move forward 33 cm",
+    "merge_count": 3,
+    "forward_cm": 32.69542673703326,
+    "rotation_deg": 30.29275131468244
+  },
+  {
+    "id": "push_ep0001_step027",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      4,
+      8,
+      13,
+      17,
+      21,
+      26
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_004.png",
+      "episode_0001/frames/frame_008.png",
+      "episode_0001/frames/frame_013.png",
+      "episode_0001/frames/frame_017.png",
+      "episode_0001/frames/frame_021.png",
+      "episode_0001/frames/frame_026.png"
+    ],
+    "current_idx": 27,
+    "current_frame_path": "episode_0001/frames/frame_027.png",
+    "action_label": "turn left 35 degrees, move forward 37 cm",
+    "merge_count": 3,
+    "forward_cm": 37.19769470221357,
+    "rotation_deg": 35.45326598280126
+  },
+  {
+    "id": "push_ep0001_step030",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      4,
+      9,
+      14,
+      19,
+      24,
+      29
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_004.png",
+      "episode_0001/frames/frame_009.png",
+      "episode_0001/frames/frame_014.png",
+      "episode_0001/frames/frame_019.png",
+      "episode_0001/frames/frame_024.png",
+      "episode_0001/frames/frame_029.png"
+    ],
+    "current_idx": 30,
+    "current_frame_path": "episode_0001/frames/frame_030.png",
+    "action_label": "turn left 32 degrees, move forward 25 cm",
+    "merge_count": 3,
+    "forward_cm": 24.890527097752255,
+    "rotation_deg": 31.94300094061531
+  },
+  {
+    "id": "push_ep0001_step033",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      5,
+      10,
+      16,
+      21,
+      26,
+      32
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_005.png",
+      "episode_0001/frames/frame_010.png",
+      "episode_0001/frames/frame_016.png",
+      "episode_0001/frames/frame_021.png",
+      "episode_0001/frames/frame_026.png",
+      "episode_0001/frames/frame_032.png"
+    ],
+    "current_idx": 33,
+    "current_frame_path": "episode_0001/frames/frame_033.png",
+    "action_label": "turn left 30 degrees, move forward 18 cm",
+    "merge_count": 3,
+    "forward_cm": 17.90348815150828,
+    "rotation_deg": 30.449304643899566
+  },
+  {
+    "id": "push_ep0001_step036",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      5,
+      11,
+      17,
+      23,
+      29,
+      35
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_005.png",
+      "episode_0001/frames/frame_011.png",
+      "episode_0001/frames/frame_017.png",
+      "episode_0001/frames/frame_023.png",
+      "episode_0001/frames/frame_029.png",
+      "episode_0001/frames/frame_035.png"
+    ],
+    "current_idx": 36,
+    "current_frame_path": "episode_0001/frames/frame_036.png",
+    "action_label": "turn left 35 degrees, move forward 23 cm",
+    "merge_count": 3,
+    "forward_cm": 22.59035984061577,
+    "rotation_deg": 35.44160500023296
+  },
+  {
+    "id": "push_ep0001_step039",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      6,
+      12,
+      19,
+      25,
+      31,
+      38
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_006.png",
+      "episode_0001/frames/frame_012.png",
+      "episode_0001/frames/frame_019.png",
+      "episode_0001/frames/frame_025.png",
+      "episode_0001/frames/frame_031.png",
+      "episode_0001/frames/frame_038.png"
+    ],
+    "current_idx": 39,
+    "current_frame_path": "episode_0001/frames/frame_039.png",
+    "action_label": "turn left 39 degrees, move forward 15 cm",
+    "merge_count": 3,
+    "forward_cm": 14.962737890636175,
+    "rotation_deg": 38.53853813070389
+  },
+  {
+    "id": "push_ep0001_step042",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      6,
+      13,
+      20,
+      27,
+      34,
+      41
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_006.png",
+      "episode_0001/frames/frame_013.png",
+      "episode_0001/frames/frame_020.png",
+      "episode_0001/frames/frame_027.png",
+      "episode_0001/frames/frame_034.png",
+      "episode_0001/frames/frame_041.png"
+    ],
+    "current_idx": 42,
+    "current_frame_path": "episode_0001/frames/frame_042.png",
+    "action_label": "turn left 37 degrees, move forward 12 cm",
+    "merge_count": 3,
+    "forward_cm": 11.64174397564258,
+    "rotation_deg": 36.90028620588258
+  },
+  {
+    "id": "push_ep0001_step045",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      7,
+      14,
+      22,
+      29,
+      36,
+      44
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_007.png",
+      "episode_0001/frames/frame_014.png",
+      "episode_0001/frames/frame_022.png",
+      "episode_0001/frames/frame_029.png",
+      "episode_0001/frames/frame_036.png",
+      "episode_0001/frames/frame_044.png"
+    ],
+    "current_idx": 45,
+    "current_frame_path": "episode_0001/frames/frame_045.png",
+    "action_label": "turn left 36 degrees, move forward 22 cm",
+    "merge_count": 3,
+    "forward_cm": 22.12552798114278,
+    "rotation_deg": 35.99699764857091
+  },
+  {
+    "id": "push_ep0001_step048",
+    "episode_id": 1,
+    "instruction": "Push the cylinder toward the target marker.",
+    "history_indices": [
+      0,
+      7,
+      15,
+      23,
+      31,
+      39,
+      47
+    ],
+    "history_frame_paths": [
+      "episode_0001/frames/frame_000.png",
+      "episode_0001/frames/frame_007.png",
+      "episode_0001/frames/frame_015.png",
+      "episode_0001/frames/frame_023.png",
+      "episode_0001/frames/frame_031.png",
+      "episode_0001/frames/frame_039.png",
+      "episode_0001/frames/frame_047.png"
+    ],
+    "current_idx": 48,
+    "current_frame_path": "episode_0001/frames/frame_048.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": -0.0,
+    "rotation_deg": 0.0
+  },
+  {
+    "id": "push_ep0002_step000",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [],
+    "history_frame_paths": [],
+    "current_idx": 0,
+    "current_frame_path": "episode_0002/frames/frame_000.png",
+    "action_label": "turn left 10 degrees, move forward 6 cm",
+    "merge_count": 2,
+    "forward_cm": 6.35323266777971,
+    "rotation_deg": 10.46236929945537
+  },
+  {
+    "id": "push_ep0002_step002",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      1
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_001.png"
+    ],
+    "current_idx": 2,
+    "current_frame_path": "episode_0002/frames/frame_002.png",
+    "action_label": "turn right 20 degrees, move forward 46 cm",
+    "merge_count": 3,
+    "forward_cm": 46.035868212307804,
+    "rotation_deg": -19.82939264376778
+  },
+  {
+    "id": "push_ep0002_step005",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_001.png",
+      "episode_0002/frames/frame_002.png",
+      "episode_0002/frames/frame_003.png",
+      "episode_0002/frames/frame_004.png"
+    ],
+    "current_idx": 5,
+    "current_frame_path": "episode_0002/frames/frame_005.png",
+    "action_label": "turn right 8 degrees, move forward 32 cm",
+    "merge_count": 2,
+    "forward_cm": 32.30631549917322,
+    "rotation_deg": -8.44633299558067
+  },
+  {
+    "id": "push_ep0002_step007",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_001.png",
+      "episode_0002/frames/frame_002.png",
+      "episode_0002/frames/frame_003.png",
+      "episode_0002/frames/frame_004.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_006.png"
+    ],
+    "current_idx": 7,
+    "current_frame_path": "episode_0002/frames/frame_007.png",
+    "action_label": "turn left 9 degrees, move forward 24 cm",
+    "merge_count": 2,
+    "forward_cm": 23.882350096393964,
+    "rotation_deg": 8.903413233007758
+  },
+  {
+    "id": "push_ep0002_step009",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_001.png",
+      "episode_0002/frames/frame_002.png",
+      "episode_0002/frames/frame_004.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_006.png",
+      "episode_0002/frames/frame_008.png"
+    ],
+    "current_idx": 9,
+    "current_frame_path": "episode_0002/frames/frame_009.png",
+    "action_label": "turn right 21 degrees, move forward 53 cm",
+    "merge_count": 3,
+    "forward_cm": 52.81022348449753,
+    "rotation_deg": -20.958026410959267
+  },
+  {
+    "id": "push_ep0002_step012",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_001.png",
+      "episode_0002/frames/frame_003.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_007.png",
+      "episode_0002/frames/frame_009.png",
+      "episode_0002/frames/frame_011.png"
+    ],
+    "current_idx": 12,
+    "current_frame_path": "episode_0002/frames/frame_012.png",
+    "action_label": "turn right 21 degrees, move forward 21 cm",
+    "merge_count": 2,
+    "forward_cm": 21.228806681031756,
+    "rotation_deg": -21.025900770107363
+  },
+  {
+    "id": "push_ep0002_step014",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      13
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_002.png",
+      "episode_0002/frames/frame_004.png",
+      "episode_0002/frames/frame_006.png",
+      "episode_0002/frames/frame_008.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_013.png"
+    ],
+    "current_idx": 14,
+    "current_frame_path": "episode_0002/frames/frame_014.png",
+    "action_label": "turn left 5 degrees, move forward 17 cm",
+    "merge_count": 1,
+    "forward_cm": 17.209565479967136,
+    "rotation_deg": 5.350964996289943
+  },
+  {
+    "id": "push_ep0002_step015",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      2,
+      4,
+      7,
+      9,
+      11,
+      14
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_002.png",
+      "episode_0002/frames/frame_004.png",
+      "episode_0002/frames/frame_007.png",
+      "episode_0002/frames/frame_009.png",
+      "episode_0002/frames/frame_011.png",
+      "episode_0002/frames/frame_014.png"
+    ],
+    "current_idx": 15,
+    "current_frame_path": "episode_0002/frames/frame_015.png",
+    "action_label": "turn right 8 degrees, move forward 30 cm",
+    "merge_count": 2,
+    "forward_cm": 29.971300576353862,
+    "rotation_deg": -8.431314349029709
+  },
+  {
+    "id": "push_ep0002_step017",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      2,
+      5,
+      8,
+      10,
+      13,
+      16
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_002.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_008.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_013.png",
+      "episode_0002/frames/frame_016.png"
+    ],
+    "current_idx": 17,
+    "current_frame_path": "episode_0002/frames/frame_017.png",
+    "action_label": "turn left 15 degrees, move forward 58 cm",
+    "merge_count": 3,
+    "forward_cm": 58.15981025390075,
+    "rotation_deg": 15.45862060685031
+  },
+  {
+    "id": "push_ep0002_step020",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      19
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_003.png",
+      "episode_0002/frames/frame_006.png",
+      "episode_0002/frames/frame_009.png",
+      "episode_0002/frames/frame_012.png",
+      "episode_0002/frames/frame_015.png",
+      "episode_0002/frames/frame_019.png"
+    ],
+    "current_idx": 20,
+    "current_frame_path": "episode_0002/frames/frame_020.png",
+    "action_label": "turn right 5 degrees, move forward 16 cm",
+    "merge_count": 1,
+    "forward_cm": 16.199431043768215,
+    "rotation_deg": -5.154521273696551
+  },
+  {
+    "id": "push_ep0002_step021",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      3,
+      6,
+      10,
+      13,
+      16,
+      20
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_003.png",
+      "episode_0002/frames/frame_006.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_013.png",
+      "episode_0002/frames/frame_016.png",
+      "episode_0002/frames/frame_020.png"
+    ],
+    "current_idx": 21,
+    "current_frame_path": "episode_0002/frames/frame_021.png",
+    "action_label": "turn left 5 degrees, move forward 17 cm",
+    "merge_count": 1,
+    "forward_cm": 17.252953728708775,
+    "rotation_deg": 5.075364855192203
+  },
+  {
+    "id": "push_ep0002_step022",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_003.png",
+      "episode_0002/frames/frame_007.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_014.png",
+      "episode_0002/frames/frame_017.png",
+      "episode_0002/frames/frame_021.png"
+    ],
+    "current_idx": 22,
+    "current_frame_path": "episode_0002/frames/frame_022.png",
+    "action_label": "turn right 25 degrees, move forward 49 cm",
+    "merge_count": 3,
+    "forward_cm": 49.12609445446307,
+    "rotation_deg": -24.703000373682983
+  },
+  {
+    "id": "push_ep0002_step025",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_004.png",
+      "episode_0002/frames/frame_008.png",
+      "episode_0002/frames/frame_012.png",
+      "episode_0002/frames/frame_016.png",
+      "episode_0002/frames/frame_020.png",
+      "episode_0002/frames/frame_024.png"
+    ],
+    "current_idx": 25,
+    "current_frame_path": "episode_0002/frames/frame_025.png",
+    "action_label": "turn right 22 degrees, move forward 8 cm",
+    "merge_count": 3,
+    "forward_cm": 7.724669504393777,
+    "rotation_deg": -21.72860941346429
+  },
+  {
+    "id": "push_ep0002_step028",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      4,
+      9,
+      13,
+      18,
+      22,
+      27
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_004.png",
+      "episode_0002/frames/frame_009.png",
+      "episode_0002/frames/frame_013.png",
+      "episode_0002/frames/frame_018.png",
+      "episode_0002/frames/frame_022.png",
+      "episode_0002/frames/frame_027.png"
+    ],
+    "current_idx": 28,
+    "current_frame_path": "episode_0002/frames/frame_028.png",
+    "action_label": "turn right 4 degrees",
+    "merge_count": 2,
+    "forward_cm": -1.7418813124230665,
+    "rotation_deg": -3.8206023173347603
+  },
+  {
+    "id": "push_ep0002_step030",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      4,
+      9,
+      14,
+      19,
+      24,
+      29
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_004.png",
+      "episode_0002/frames/frame_009.png",
+      "episode_0002/frames/frame_014.png",
+      "episode_0002/frames/frame_019.png",
+      "episode_0002/frames/frame_024.png",
+      "episode_0002/frames/frame_029.png"
+    ],
+    "current_idx": 30,
+    "current_frame_path": "episode_0002/frames/frame_030.png",
+    "action_label": "turn left 2 degrees, move forward 1 cm",
+    "merge_count": 1,
+    "forward_cm": 1.4776234162800859,
+    "rotation_deg": 1.7368252916634634
+  },
+  {
+    "id": "push_ep0002_step031",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_015.png",
+      "episode_0002/frames/frame_020.png",
+      "episode_0002/frames/frame_025.png",
+      "episode_0002/frames/frame_030.png"
+    ],
+    "current_idx": 31,
+    "current_frame_path": "episode_0002/frames/frame_031.png",
+    "action_label": "move forward 2 cm",
+    "merge_count": 1,
+    "forward_cm": 2.24885978243494,
+    "rotation_deg": 0.4294979732596758
+  },
+  {
+    "id": "push_ep0002_step032",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      31
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_015.png",
+      "episode_0002/frames/frame_020.png",
+      "episode_0002/frames/frame_025.png",
+      "episode_0002/frames/frame_031.png"
+    ],
+    "current_idx": 32,
+    "current_frame_path": "episode_0002/frames/frame_032.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": 0.7005760871565536,
+    "rotation_deg": -0.8932337442344582
+  },
+  {
+    "id": "push_ep0002_step033",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      5,
+      10,
+      16,
+      21,
+      26,
+      32
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_016.png",
+      "episode_0002/frames/frame_021.png",
+      "episode_0002/frames/frame_026.png",
+      "episode_0002/frames/frame_032.png"
+    ],
+    "current_idx": 33,
+    "current_frame_path": "episode_0002/frames/frame_033.png",
+    "action_label": "turn left 1 degrees",
+    "merge_count": 1,
+    "forward_cm": 0.4344906591372317,
+    "rotation_deg": 1.495472028851109
+  },
+  {
+    "id": "push_ep0002_step034",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      5,
+      11,
+      16,
+      22,
+      27,
+      33
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_011.png",
+      "episode_0002/frames/frame_016.png",
+      "episode_0002/frames/frame_022.png",
+      "episode_0002/frames/frame_027.png",
+      "episode_0002/frames/frame_033.png"
+    ],
+    "current_idx": 34,
+    "current_frame_path": "episode_0002/frames/frame_034.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": 0.2599191613027131,
+    "rotation_deg": -0.3003826236431016
+  },
+  {
+    "id": "push_ep0002_step035",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      5,
+      11,
+      17,
+      22,
+      28,
+      34
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_011.png",
+      "episode_0002/frames/frame_017.png",
+      "episode_0002/frames/frame_022.png",
+      "episode_0002/frames/frame_028.png",
+      "episode_0002/frames/frame_034.png"
+    ],
+    "current_idx": 35,
+    "current_frame_path": "episode_0002/frames/frame_035.png",
+    "action_label": "turn left 1 degrees",
+    "merge_count": 1,
+    "forward_cm": 0.1092653213200432,
+    "rotation_deg": 1.2432040589358528
+  },
+  {
+    "id": "push_ep0002_step036",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      5,
+      11,
+      17,
+      23,
+      29,
+      35
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_005.png",
+      "episode_0002/frames/frame_011.png",
+      "episode_0002/frames/frame_017.png",
+      "episode_0002/frames/frame_023.png",
+      "episode_0002/frames/frame_029.png",
+      "episode_0002/frames/frame_035.png"
+    ],
+    "current_idx": 36,
+    "current_frame_path": "episode_0002/frames/frame_036.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": 0.2314207795011119,
+    "rotation_deg": 0.09874045081858762
+  },
+  {
+    "id": "push_ep0002_step037",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      6,
+      12,
+      18,
+      24,
+      30,
+      36
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_006.png",
+      "episode_0002/frames/frame_012.png",
+      "episode_0002/frames/frame_018.png",
+      "episode_0002/frames/frame_024.png",
+      "episode_0002/frames/frame_030.png",
+      "episode_0002/frames/frame_036.png"
+    ],
+    "current_idx": 37,
+    "current_frame_path": "episode_0002/frames/frame_037.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": -0.2672418646997262,
+    "rotation_deg": 0.8605067454281663
+  },
+  {
+    "id": "push_ep0002_step038",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      6,
+      12,
+      18,
+      24,
+      30,
+      37
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_006.png",
+      "episode_0002/frames/frame_012.png",
+      "episode_0002/frames/frame_018.png",
+      "episode_0002/frames/frame_024.png",
+      "episode_0002/frames/frame_030.png",
+      "episode_0002/frames/frame_037.png"
+    ],
+    "current_idx": 38,
+    "current_frame_path": "episode_0002/frames/frame_038.png",
+    "action_label": "turn left 2 degrees",
+    "merge_count": 1,
+    "forward_cm": -0.11350871434407692,
+    "rotation_deg": 1.5845209691604942
+  },
+  {
+    "id": "push_ep0002_step039",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      6,
+      12,
+      19,
+      25,
+      31,
+      38
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_006.png",
+      "episode_0002/frames/frame_012.png",
+      "episode_0002/frames/frame_019.png",
+      "episode_0002/frames/frame_025.png",
+      "episode_0002/frames/frame_031.png",
+      "episode_0002/frames/frame_038.png"
+    ],
+    "current_idx": 39,
+    "current_frame_path": "episode_0002/frames/frame_039.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": 0.9797951275580765,
+    "rotation_deg": 0.49145036415756066
+  },
+  {
+    "id": "push_ep0002_step040",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      6,
+      13,
+      19,
+      26,
+      32,
+      39
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_006.png",
+      "episode_0002/frames/frame_013.png",
+      "episode_0002/frames/frame_019.png",
+      "episode_0002/frames/frame_026.png",
+      "episode_0002/frames/frame_032.png",
+      "episode_0002/frames/frame_039.png"
+    ],
+    "current_idx": 40,
+    "current_frame_path": "episode_0002/frames/frame_040.png",
+    "action_label": "turn left 11 degrees, move forward 5 cm",
+    "merge_count": 3,
+    "forward_cm": 5.472298736019942,
+    "rotation_deg": 11.15709833322345
+  },
+  {
+    "id": "push_ep0002_step043",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      7,
+      14,
+      21,
+      28,
+      35,
+      42
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_007.png",
+      "episode_0002/frames/frame_014.png",
+      "episode_0002/frames/frame_021.png",
+      "episode_0002/frames/frame_028.png",
+      "episode_0002/frames/frame_035.png",
+      "episode_0002/frames/frame_042.png"
+    ],
+    "current_idx": 43,
+    "current_frame_path": "episode_0002/frames/frame_043.png",
+    "action_label": "turn left 29 degrees, move forward 19 cm",
+    "merge_count": 3,
+    "forward_cm": 18.892345259370597,
+    "rotation_deg": 28.574413053213245
+  },
+  {
+    "id": "push_ep0002_step046",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      7,
+      15,
+      22,
+      30,
+      37,
+      45
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_007.png",
+      "episode_0002/frames/frame_015.png",
+      "episode_0002/frames/frame_022.png",
+      "episode_0002/frames/frame_030.png",
+      "episode_0002/frames/frame_037.png",
+      "episode_0002/frames/frame_045.png"
+    ],
+    "current_idx": 46,
+    "current_frame_path": "episode_0002/frames/frame_046.png",
+    "action_label": "turn left 35 degrees, move forward 28 cm",
+    "merge_count": 3,
+    "forward_cm": 27.781590685353162,
+    "rotation_deg": 35.47822117832723
+  },
+  {
+    "id": "push_ep0002_step049",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      40,
+      48
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_008.png",
+      "episode_0002/frames/frame_016.png",
+      "episode_0002/frames/frame_024.png",
+      "episode_0002/frames/frame_032.png",
+      "episode_0002/frames/frame_040.png",
+      "episode_0002/frames/frame_048.png"
+    ],
+    "current_idx": 49,
+    "current_frame_path": "episode_0002/frames/frame_049.png",
+    "action_label": "turn left 35 degrees, move forward 33 cm",
+    "merge_count": 3,
+    "forward_cm": 33.273607169013054,
+    "rotation_deg": 34.80688040161505
+  },
+  {
+    "id": "push_ep0002_step052",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      8,
+      17,
+      25,
+      34,
+      42,
+      51
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_008.png",
+      "episode_0002/frames/frame_017.png",
+      "episode_0002/frames/frame_025.png",
+      "episode_0002/frames/frame_034.png",
+      "episode_0002/frames/frame_042.png",
+      "episode_0002/frames/frame_051.png"
+    ],
+    "current_idx": 52,
+    "current_frame_path": "episode_0002/frames/frame_052.png",
+    "action_label": "turn left 33 degrees, move forward 24 cm",
+    "merge_count": 3,
+    "forward_cm": 24.376042552983286,
+    "rotation_deg": 33.16615795644854
+  },
+  {
+    "id": "push_ep0002_step055",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      9,
+      18,
+      27,
+      36,
+      45,
+      54
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_009.png",
+      "episode_0002/frames/frame_018.png",
+      "episode_0002/frames/frame_027.png",
+      "episode_0002/frames/frame_036.png",
+      "episode_0002/frames/frame_045.png",
+      "episode_0002/frames/frame_054.png"
+    ],
+    "current_idx": 55,
+    "current_frame_path": "episode_0002/frames/frame_055.png",
+    "action_label": "turn left 34 degrees, move forward 22 cm",
+    "merge_count": 3,
+    "forward_cm": 21.985086482632028,
+    "rotation_deg": 33.82271622804079
+  },
+  {
+    "id": "push_ep0002_step058",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      9,
+      19,
+      28,
+      38,
+      47,
+      57
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_009.png",
+      "episode_0002/frames/frame_019.png",
+      "episode_0002/frames/frame_028.png",
+      "episode_0002/frames/frame_038.png",
+      "episode_0002/frames/frame_047.png",
+      "episode_0002/frames/frame_057.png"
+    ],
+    "current_idx": 58,
+    "current_frame_path": "episode_0002/frames/frame_058.png",
+    "action_label": "turn left 37 degrees, move forward 29 cm",
+    "merge_count": 3,
+    "forward_cm": 28.7273577487192,
+    "rotation_deg": 36.82257199527303
+  },
+  {
+    "id": "push_ep0002_step061",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50,
+      60
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_020.png",
+      "episode_0002/frames/frame_030.png",
+      "episode_0002/frames/frame_040.png",
+      "episode_0002/frames/frame_050.png",
+      "episode_0002/frames/frame_060.png"
+    ],
+    "current_idx": 61,
+    "current_frame_path": "episode_0002/frames/frame_061.png",
+    "action_label": "turn left 38 degrees, move forward 12 cm",
+    "merge_count": 3,
+    "forward_cm": 12.328119094495174,
+    "rotation_deg": 37.775493218899875
+  },
+  {
+    "id": "push_ep0002_step064",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      10,
+      21,
+      31,
+      42,
+      52,
+      63
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_010.png",
+      "episode_0002/frames/frame_021.png",
+      "episode_0002/frames/frame_031.png",
+      "episode_0002/frames/frame_042.png",
+      "episode_0002/frames/frame_052.png",
+      "episode_0002/frames/frame_063.png"
+    ],
+    "current_idx": 64,
+    "current_frame_path": "episode_0002/frames/frame_064.png",
+    "action_label": "turn left 34 degrees, move forward 17 cm",
+    "merge_count": 3,
+    "forward_cm": 16.793447818084942,
+    "rotation_deg": 33.87683747854783
+  },
+  {
+    "id": "push_ep0002_step067",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      11,
+      22,
+      33,
+      44,
+      55,
+      66
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_011.png",
+      "episode_0002/frames/frame_022.png",
+      "episode_0002/frames/frame_033.png",
+      "episode_0002/frames/frame_044.png",
+      "episode_0002/frames/frame_055.png",
+      "episode_0002/frames/frame_066.png"
+    ],
+    "current_idx": 67,
+    "current_frame_path": "episode_0002/frames/frame_067.png",
+    "action_label": "turn left 10 degrees, move forward 7 cm",
+    "merge_count": 1,
+    "forward_cm": 7.169181301522778,
+    "rotation_deg": 10.313661615534395
+  },
+  {
+    "id": "push_ep0002_step068",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      11,
+      22,
+      33,
+      44,
+      55,
+      67
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_011.png",
+      "episode_0002/frames/frame_022.png",
+      "episode_0002/frames/frame_033.png",
+      "episode_0002/frames/frame_044.png",
+      "episode_0002/frames/frame_055.png",
+      "episode_0002/frames/frame_067.png"
+    ],
+    "current_idx": 68,
+    "current_frame_path": "episode_0002/frames/frame_068.png",
+    "action_label": "turn right 12 degrees, move forward 23 cm",
+    "merge_count": 2,
+    "forward_cm": 22.623536397827795,
+    "rotation_deg": -12.447289665341462
+  },
+  {
+    "id": "push_ep0002_step070",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      11,
+      23,
+      34,
+      46,
+      57,
+      69
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_011.png",
+      "episode_0002/frames/frame_023.png",
+      "episode_0002/frames/frame_034.png",
+      "episode_0002/frames/frame_046.png",
+      "episode_0002/frames/frame_057.png",
+      "episode_0002/frames/frame_069.png"
+    ],
+    "current_idx": 70,
+    "current_frame_path": "episode_0002/frames/frame_070.png",
+    "action_label": "turn left 28 degrees, move forward 18 cm",
+    "merge_count": 3,
+    "forward_cm": 18.380543021701293,
+    "rotation_deg": 27.909404778176494
+  },
+  {
+    "id": "push_ep0002_step073",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      12,
+      24,
+      36,
+      48,
+      60,
+      72
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_012.png",
+      "episode_0002/frames/frame_024.png",
+      "episode_0002/frames/frame_036.png",
+      "episode_0002/frames/frame_048.png",
+      "episode_0002/frames/frame_060.png",
+      "episode_0002/frames/frame_072.png"
+    ],
+    "current_idx": 73,
+    "current_frame_path": "episode_0002/frames/frame_073.png",
+    "action_label": "turn left 35 degrees, move forward 28 cm",
+    "merge_count": 3,
+    "forward_cm": 27.592402835078868,
+    "rotation_deg": 34.642784894432054
+  },
+  {
+    "id": "push_ep0002_step076",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      12,
+      25,
+      37,
+      50,
+      62,
+      75
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_012.png",
+      "episode_0002/frames/frame_025.png",
+      "episode_0002/frames/frame_037.png",
+      "episode_0002/frames/frame_050.png",
+      "episode_0002/frames/frame_062.png",
+      "episode_0002/frames/frame_075.png"
+    ],
+    "current_idx": 76,
+    "current_frame_path": "episode_0002/frames/frame_076.png",
+    "action_label": "turn left 38 degrees, move forward 26 cm",
+    "merge_count": 3,
+    "forward_cm": 26.056677005868377,
+    "rotation_deg": 37.59433456071458
+  },
+  {
+    "id": "push_ep0002_step079",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      13,
+      26,
+      39,
+      52,
+      65,
+      78
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_013.png",
+      "episode_0002/frames/frame_026.png",
+      "episode_0002/frames/frame_039.png",
+      "episode_0002/frames/frame_052.png",
+      "episode_0002/frames/frame_065.png",
+      "episode_0002/frames/frame_078.png"
+    ],
+    "current_idx": 79,
+    "current_frame_path": "episode_0002/frames/frame_079.png",
+    "action_label": "turn left 37 degrees, move forward 24 cm",
+    "merge_count": 3,
+    "forward_cm": 24.181646594872376,
+    "rotation_deg": 37.23189862679827
+  },
+  {
+    "id": "push_ep0002_step082",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      13,
+      27,
+      40,
+      54,
+      67,
+      81
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_013.png",
+      "episode_0002/frames/frame_027.png",
+      "episode_0002/frames/frame_040.png",
+      "episode_0002/frames/frame_054.png",
+      "episode_0002/frames/frame_067.png",
+      "episode_0002/frames/frame_081.png"
+    ],
+    "current_idx": 82,
+    "current_frame_path": "episode_0002/frames/frame_082.png",
+    "action_label": "turn left 36 degrees, move forward 24 cm",
+    "merge_count": 3,
+    "forward_cm": 23.968387982768025,
+    "rotation_deg": 36.331544581748744
+  },
+  {
+    "id": "push_ep0002_step085",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      14,
+      28,
+      42,
+      56,
+      70,
+      84
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_014.png",
+      "episode_0002/frames/frame_028.png",
+      "episode_0002/frames/frame_042.png",
+      "episode_0002/frames/frame_056.png",
+      "episode_0002/frames/frame_070.png",
+      "episode_0002/frames/frame_084.png"
+    ],
+    "current_idx": 85,
+    "current_frame_path": "episode_0002/frames/frame_085.png",
+    "action_label": "turn left 35 degrees, move forward 31 cm",
+    "merge_count": 3,
+    "forward_cm": 31.399038291421853,
+    "rotation_deg": 35.01149865991564
+  },
+  {
+    "id": "push_ep0002_step088",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      14,
+      29,
+      43,
+      58,
+      72,
+      87
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_014.png",
+      "episode_0002/frames/frame_029.png",
+      "episode_0002/frames/frame_043.png",
+      "episode_0002/frames/frame_058.png",
+      "episode_0002/frames/frame_072.png",
+      "episode_0002/frames/frame_087.png"
+    ],
+    "current_idx": 88,
+    "current_frame_path": "episode_0002/frames/frame_088.png",
+    "action_label": "turn left 31 degrees, move forward 19 cm",
+    "merge_count": 3,
+    "forward_cm": 19.286423521913374,
+    "rotation_deg": 30.761004577933065
+  },
+  {
+    "id": "push_ep0002_step091",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_015.png",
+      "episode_0002/frames/frame_030.png",
+      "episode_0002/frames/frame_045.png",
+      "episode_0002/frames/frame_060.png",
+      "episode_0002/frames/frame_075.png",
+      "episode_0002/frames/frame_090.png"
+    ],
+    "current_idx": 91,
+    "current_frame_path": "episode_0002/frames/frame_091.png",
+    "action_label": "turn left 31 degrees, move forward 14 cm",
+    "merge_count": 3,
+    "forward_cm": 13.631057345957178,
+    "rotation_deg": 30.524587692101655
+  },
+  {
+    "id": "push_ep0002_step094",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      15,
+      31,
+      46,
+      62,
+      77,
+      93
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_015.png",
+      "episode_0002/frames/frame_031.png",
+      "episode_0002/frames/frame_046.png",
+      "episode_0002/frames/frame_062.png",
+      "episode_0002/frames/frame_077.png",
+      "episode_0002/frames/frame_093.png"
+    ],
+    "current_idx": 94,
+    "current_frame_path": "episode_0002/frames/frame_094.png",
+    "action_label": "turn left 37 degrees, move forward 13 cm",
+    "merge_count": 3,
+    "forward_cm": 12.955839078344365,
+    "rotation_deg": 37.44078302753132
+  },
+  {
+    "id": "push_ep0002_step097",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      16,
+      32,
+      48,
+      64,
+      80,
+      96
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_016.png",
+      "episode_0002/frames/frame_032.png",
+      "episode_0002/frames/frame_048.png",
+      "episode_0002/frames/frame_064.png",
+      "episode_0002/frames/frame_080.png",
+      "episode_0002/frames/frame_096.png"
+    ],
+    "current_idx": 97,
+    "current_frame_path": "episode_0002/frames/frame_097.png",
+    "action_label": "turn left 35 degrees, move forward 20 cm",
+    "merge_count": 3,
+    "forward_cm": 20.35322536841112,
+    "rotation_deg": 35.03118010915951
+  },
+  {
+    "id": "push_ep0002_step100",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      16,
+      33,
+      49,
+      66,
+      82,
+      99
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_016.png",
+      "episode_0002/frames/frame_033.png",
+      "episode_0002/frames/frame_049.png",
+      "episode_0002/frames/frame_066.png",
+      "episode_0002/frames/frame_082.png",
+      "episode_0002/frames/frame_099.png"
+    ],
+    "current_idx": 100,
+    "current_frame_path": "episode_0002/frames/frame_100.png",
+    "action_label": "turn left 26 degrees",
+    "merge_count": 3,
+    "forward_cm": -0.19393151220041904,
+    "rotation_deg": 25.535025403841324
+  },
+  {
+    "id": "push_ep0002_step103",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      17,
+      34,
+      51,
+      68,
+      85,
+      102
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_017.png",
+      "episode_0002/frames/frame_034.png",
+      "episode_0002/frames/frame_051.png",
+      "episode_0002/frames/frame_068.png",
+      "episode_0002/frames/frame_085.png",
+      "episode_0002/frames/frame_102.png"
+    ],
+    "current_idx": 103,
+    "current_frame_path": "episode_0002/frames/frame_103.png",
+    "action_label": "turn left 27 degrees",
+    "merge_count": 3,
+    "forward_cm": -2.7385152830132258,
+    "rotation_deg": 26.654230078227375
+  },
+  {
+    "id": "push_ep0002_step106",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      17,
+      35,
+      52,
+      70,
+      87,
+      105
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_017.png",
+      "episode_0002/frames/frame_035.png",
+      "episode_0002/frames/frame_052.png",
+      "episode_0002/frames/frame_070.png",
+      "episode_0002/frames/frame_087.png",
+      "episode_0002/frames/frame_105.png"
+    ],
+    "current_idx": 106,
+    "current_frame_path": "episode_0002/frames/frame_106.png",
+    "action_label": "turn left 36 degrees, move forward 9 cm",
+    "merge_count": 3,
+    "forward_cm": 9.088734671469602,
+    "rotation_deg": 35.83180568336985
+  },
+  {
+    "id": "push_ep0002_step109",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      18,
+      36,
+      54,
+      72,
+      90,
+      108
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_018.png",
+      "episode_0002/frames/frame_036.png",
+      "episode_0002/frames/frame_054.png",
+      "episode_0002/frames/frame_072.png",
+      "episode_0002/frames/frame_090.png",
+      "episode_0002/frames/frame_108.png"
+    ],
+    "current_idx": 109,
+    "current_frame_path": "episode_0002/frames/frame_109.png",
+    "action_label": "turn left 36 degrees, move forward 20 cm",
+    "merge_count": 3,
+    "forward_cm": 19.962239861485962,
+    "rotation_deg": 35.506869857658415
+  },
+  {
+    "id": "push_ep0002_step112",
+    "episode_id": 2,
+    "instruction": "Clear the cylinder by pushing it to the marked location.",
+    "history_indices": [
+      0,
+      18,
+      37,
+      55,
+      74,
+      92,
+      111
+    ],
+    "history_frame_paths": [
+      "episode_0002/frames/frame_000.png",
+      "episode_0002/frames/frame_018.png",
+      "episode_0002/frames/frame_037.png",
+      "episode_0002/frames/frame_055.png",
+      "episode_0002/frames/frame_074.png",
+      "episode_0002/frames/frame_092.png",
+      "episode_0002/frames/frame_111.png"
+    ],
+    "current_idx": 112,
+    "current_frame_path": "episode_0002/frames/frame_112.png",
+    "action_label": "stop",
+    "merge_count": 1,
+    "forward_cm": -0.0,
+    "rotation_deg": 0.0
+  },
+  {
+    "id": "push_ep0003_step000",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [],
+    "history_frame_paths": [],
+    "current_idx": 0,
+    "current_frame_path": "episode_0003/frames/frame_000.png",
+    "action_label": "turn right 29 degrees, move forward 39 cm",
+    "merge_count": 3,
+    "forward_cm": 39.228125510039476,
+    "rotation_deg": -28.564452128745188
+  },
+  {
+    "id": "push_ep0003_step003",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [
+      0,
+      1,
+      2
+    ],
+    "history_frame_paths": [
+      "episode_0003/frames/frame_000.png",
+      "episode_0003/frames/frame_001.png",
+      "episode_0003/frames/frame_002.png"
+    ],
+    "current_idx": 3,
+    "current_frame_path": "episode_0003/frames/frame_003.png",
+    "action_label": "turn right 22 degrees, move forward 43 cm",
+    "merge_count": 2,
+    "forward_cm": 43.04712479681787,
+    "rotation_deg": -22.27454200098112
+  },
+  {
+    "id": "push_ep0003_step005",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "history_frame_paths": [
+      "episode_0003/frames/frame_000.png",
+      "episode_0003/frames/frame_001.png",
+      "episode_0003/frames/frame_002.png",
+      "episode_0003/frames/frame_003.png",
+      "episode_0003/frames/frame_004.png"
+    ],
+    "current_idx": 5,
+    "current_frame_path": "episode_0003/frames/frame_005.png",
+    "action_label": "move forward 59 cm",
+    "merge_count": 3,
+    "forward_cm": 58.5052353238497,
+    "rotation_deg": -0.7098479546343147
+  },
+  {
+    "id": "push_ep0003_step008",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "history_frame_paths": [
+      "episode_0003/frames/frame_000.png",
+      "episode_0003/frames/frame_001.png",
+      "episode_0003/frames/frame_002.png",
+      "episode_0003/frames/frame_003.png",
+      "episode_0003/frames/frame_004.png",
+      "episode_0003/frames/frame_005.png",
+      "episode_0003/frames/frame_007.png"
+    ],
+    "current_idx": 8,
+    "current_frame_path": "episode_0003/frames/frame_008.png",
+    "action_label": "turn left 4 degrees, move forward 21 cm",
+    "merge_count": 1,
+    "forward_cm": 21.464259765873788,
+    "rotation_deg": 4.341655976920667
+  },
+  {
+    "id": "push_ep0003_step009",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      8
+    ],
+    "history_frame_paths": [
+      "episode_0003/frames/frame_000.png",
+      "episode_0003/frames/frame_001.png",
+      "episode_0003/frames/frame_002.png",
+      "episode_0003/frames/frame_004.png",
+      "episode_0003/frames/frame_005.png",
+      "episode_0003/frames/frame_006.png",
+      "episode_0003/frames/frame_008.png"
+    ],
+    "current_idx": 9,
+    "current_frame_path": "episode_0003/frames/frame_009.png",
+    "action_label": "turn right 4 degrees, move forward 17 cm",
+    "merge_count": 1,
+    "forward_cm": 16.82427123986847,
+    "rotation_deg": -4.379321565302318
+  },
+  {
+    "id": "push_ep0003_step010",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      9
+    ],
+    "history_frame_paths": [
+      "episode_0003/frames/frame_000.png",
+      "episode_0003/frames/frame_001.png",
+      "episode_0003/frames/frame_003.png",
+      "episode_0003/frames/frame_004.png",
+      "episode_0003/frames/frame_006.png",
+      "episode_0003/frames/frame_007.png",
+      "episode_0003/frames/frame_009.png"
+    ],
+    "current_idx": 10,
+    "current_frame_path": "episode_0003/frames/frame_010.png",
+    "action_label": "move forward 15 cm",
+    "merge_count": 1,
+    "forward_cm": 15.045672353655984,
+    "rotation_deg": -0.9824514844103983
+  },
+  {
+    "id": "push_ep0003_step011",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [
+      0,
+      1,
+      3,
+      5,
+      6,
+      8,
+      10
+    ],
+    "history_frame_paths": [
+      "episode_0003/frames/frame_000.png",
+      "episode_0003/frames/frame_001.png",
+      "episode_0003/frames/frame_003.png",
+      "episode_0003/frames/frame_005.png",
+      "episode_0003/frames/frame_006.png",
+      "episode_0003/frames/frame_008.png",
+      "episode_0003/frames/frame_010.png"
+    ],
+    "current_idx": 11,
+    "current_frame_path": "episode_0003/frames/frame_011.png",
+    "action_label": "turn left 7 degrees, move forward 18 cm",
+    "merge_count": 1,
+    "forward_cm": 17.989273098448816,
+    "rotation_deg": 6.946121111992069
+  },
+  {
+    "id": "push_ep0003_step012",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [
+      0,
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "history_frame_paths": [
+      "episode_0003/frames/frame_000.png",
+      "episode_0003/frames/frame_001.png",
+      "episode_0003/frames/frame_003.png",
+      "episode_0003/frames/frame_005.png",
+      "episode_0003/frames/frame_007.png",
+      "episode_0003/frames/frame_009.png",
+      "episode_0003/frames/frame_011.png"
+    ],
+    "current_idx": 12,
+    "current_frame_path": "episode_0003/frames/frame_012.png",
+    "action_label": "turn left 2 degrees, move forward 46 cm",
+    "merge_count": 3,
+    "forward_cm": 46.22739398245213,
+    "rotation_deg": 1.7529826669985273
+  },
+  {
+    "id": "push_ep0003_step015",
+    "episode_id": 3,
+    "instruction": "Navigate to the cylinder and push it to the target.",
+    "history_indices": [
+      0,
+      2,
+      4,
+      7,
+      9,
+      11,
+      14
+    ],
+    "history_frame_paths": [
+      "episode_0003/frames/frame_000.png",
+      "episode_0003/frames/frame_002.png",
+      "episode_0003/frames/frame_004.png",
+      "episode_0003/frames/frame_007.png",
+      "episode_0003/frames/frame_009.png",
+      "episode_0003/frames/frame_011.png",
+      "episode_0003/frames/frame_014.png"
+    ],
+    "current_idx": 15,
+    "current_frame_path": "episode_0003/frames/frame_015.png",
+    "action_label": "turn left 1 degrees, move forward 12 cm",
+    "merge_count": 1,
+    "forward_cm": 12.116103516495775,
+    "rotation_deg": 1.1304429305545498
+  }
+]

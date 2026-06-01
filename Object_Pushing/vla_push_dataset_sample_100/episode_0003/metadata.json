@@ -1,0 +1,208 @@
+{
+  "episode_id": 3,
+  "instruction": "Navigate to the cylinder and push it to the target.",
+  "num_frames": 17,
+  "num_samples": 9,
+  "num_history": 7,
+  "success": true,
+  "final_object_target_distance_m": 0.005943493451923132,
+  "raw_actions": [
+    {
+      "frame_idx": 0,
+      "forward_cm": 7.460110833858409,
+      "rotation_deg": -8.502921968170822,
+      "action_label": "turn right 9 degrees, move forward 7 cm"
+    },
+    {
+      "frame_idx": 1,
+      "forward_cm": 15.848439256628136,
+      "rotation_deg": -9.231519848858301,
+      "action_label": "turn right 9 degrees, move forward 16 cm"
+    },
+    {
+      "frame_idx": 2,
+      "forward_cm": 15.919575419552928,
+      "rotation_deg": -10.830010311716064,
+      "action_label": "turn right 11 degrees, move forward 16 cm"
+    },
+    {
+      "frame_idx": 3,
+      "forward_cm": 21.45505915997669,
+      "rotation_deg": -10.122688670299608,
+      "action_label": "turn right 10 degrees, move forward 21 cm"
+    },
+    {
+      "frame_idx": 4,
+      "forward_cm": 21.592065636841177,
+      "rotation_deg": -12.151853330681513,
+      "action_label": "turn right 12 degrees, move forward 22 cm"
+    },
+    {
+      "frame_idx": 5,
+      "forward_cm": 22.47501452040531,
+      "rotation_deg": -0.14601434306122363,
+      "action_label": "move forward 22 cm"
+    },
+    {
+      "frame_idx": 6,
+      "forward_cm": 18.17562520810993,
+      "rotation_deg": 0.3787854786991851,
+      "action_label": "move forward 18 cm"
+    },
+    {
+      "frame_idx": 7,
+      "forward_cm": 17.85459559533446,
+      "rotation_deg": -0.9426190902722762,
+      "action_label": "move forward 18 cm"
+    },
+    {
+      "frame_idx": 8,
+      "forward_cm": 21.464259765873788,
+      "rotation_deg": 4.341655976920667,
+      "action_label": "turn left 4 degrees, move forward 21 cm"
+    },
+    {
+      "frame_idx": 9,
+      "forward_cm": 16.82427123986847,
+      "rotation_deg": -4.379321565302318,
+      "action_label": "turn right 4 degrees, move forward 17 cm"
+    },
+    {
+      "frame_idx": 10,
+      "forward_cm": 15.045672353655984,
+      "rotation_deg": -0.9824514844103983,
+      "action_label": "move forward 15 cm"
+    },
+    {
+      "frame_idx": 11,
+      "forward_cm": 17.989273098448816,
+      "rotation_deg": 6.946121111992069,
+      "action_label": "turn left 7 degrees, move forward 18 cm"
+    },
+    {
+      "frame_idx": 12,
+      "forward_cm": 18.01863472411529,
+      "rotation_deg": 0.735280075337537,
+      "action_label": "move forward 18 cm"
+    },
+    {
+      "frame_idx": 13,
+      "forward_cm": 15.014914648568062,
+      "rotation_deg": 0.9226162760550037,
+      "action_label": "move forward 15 cm"
+    },
+    {
+      "frame_idx": 14,
+      "forward_cm": 13.193844609768771,
+      "rotation_deg": 0.0950863156059864,
+      "action_label": "move forward 13 cm"
+    },
+    {
+      "frame_idx": 15,
+      "forward_cm": 12.116103516495775,
+      "rotation_deg": 1.1304429305545498,
+      "action_label": "turn left 1 degrees, move forward 12 cm"
+    },
+    {
+      "frame_idx": 16,
+      "forward_cm": -0.0,
+      "rotation_deg": 0.0,
+      "action_label": "stop"
+    }
+  ],
+  "merged_actions": [
+    {
+      "frame_idx": 0,
+      "action_label": "turn right 29 degrees, move forward 39 cm",
+      "merge_count": 3,
+      "forward_cm": 39.228125510039476,
+      "rotation_deg": -28.564452128745188
+    },
+    {
+      "frame_idx": 3,
+      "action_label": "turn right 22 degrees, move forward 43 cm",
+      "merge_count": 2,
+      "forward_cm": 43.04712479681787,
+      "rotation_deg": -22.27454200098112
+    },
+    {
+      "frame_idx": 5,
+      "action_label": "move forward 59 cm",
+      "merge_count": 3,
+      "forward_cm": 58.5052353238497,
+      "rotation_deg": -0.7098479546343147
+    },
+    {
+      "frame_idx": 8,
+      "action_label": "turn left 4 degrees, move forward 21 cm",
+      "merge_count": 1,
+      "forward_cm": 21.464259765873788,
+      "rotation_deg": 4.341655976920667
+    },
+    {
+      "frame_idx": 9,
+      "action_label": "turn right 4 degrees, move forward 17 cm",
+      "merge_count": 1,
+      "forward_cm": 16.82427123986847,
+      "rotation_deg": -4.379321565302318
+    },
+    {
+      "frame_idx": 10,
+      "action_label": "move forward 15 cm",
+      "merge_count": 1,
+      "forward_cm": 15.045672353655984,
+      "rotation_deg": -0.9824514844103983
+    },
+    {
+      "frame_idx": 11,
+      "action_label": "turn left 7 degrees, move forward 18 cm",
+      "merge_count": 1,
+      "forward_cm": 17.989273098448816,
+      "rotation_deg": 6.946121111992069
+    },
+    {
+      "frame_idx": 12,
+      "action_label": "turn left 2 degrees, move forward 46 cm",
+      "merge_count": 3,
+      "forward_cm": 46.22739398245213,
+      "rotation_deg": 1.7529826669985273
+    },
+    {
+      "frame_idx": 15,
+      "action_label": "turn left 1 degrees, move forward 12 cm",
+      "merge_count": 1,
+      "forward_cm": 12.116103516495775,
+      "rotation_deg": 1.1304429305545498
+    },
+    {
+      "frame_idx": 16,
+      "action_label": "stop",
+      "merge_count": 1,
+      "forward_cm": -0.0,
+      "rotation_deg": 0.0
+    }
+  ],
+  "lighting_randomization": {
+    "distant_light": {
+      "prim_path": "/World/light",
+      "intensity": 3180.771831038438,
+      "color": [
+        0.7690233653384926,
+        0.8645256958480056,
+        0.7863256894645773
+      ],
+      "applied": true
+    },
+    "dome_light": {
+      "prim_path": "/World/skyLight",
+      "intensity": 1523.0040421418068,
+      "color": [
+        0.13550750073581042,
+        0.15763598756686154,
+        0.15231725855280193
+      ],
+      "applied": true
+    }
+  },
+  "clipped_to_target_samples": true
+}

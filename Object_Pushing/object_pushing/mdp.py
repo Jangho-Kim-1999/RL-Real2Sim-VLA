@@ -54,6 +54,48 @@ def _yaw_quat(yaw: torch.Tensor) -> torch.Tensor:
     )
 
 
+def _points_in_polygon(points: torch.Tensor, polygon_vertices: torch.Tensor) -> torch.Tensor:
+    """Return a boolean mask for points inside a 2-D polygon using ray casting."""
+    x = points[:, 0:1]
+    y = points[:, 1:2]
+    xi = polygon_vertices[:, 0]
+    yi = polygon_vertices[:, 1]
+    xj = torch.roll(xi, shifts=1)
+    yj = torch.roll(yi, shifts=1)
+    denom = yj - yi
+    denom = torch.where(torch.abs(denom) < 1.0e-12, torch.full_like(denom, 1.0e-12), denom)
+    intersects = ((yi > y) != (yj > y)) & (
+        x < (xj - xi) * (y - yi) / denom + xi
+    )
+    return torch.count_nonzero(intersects, dim=1) % 2 == 1
+
+
+def _sample_xy_in_polygon(
+    count: int,
+    polygon_vertices: Sequence[float] | Sequence[Sequence[float]],
+    device: str | torch.device,
+) -> torch.Tensor:
+    vertices = torch.as_tensor(polygon_vertices, dtype=torch.float32, device=device).reshape(-1, 2)
+    if vertices.shape[0] < 3:
+        raise ValueError("spawn_polygon_vertices must contain at least three XY vertices.")
+
+    lower = vertices.min(dim=0).values
+    upper = vertices.max(dim=0).values
+    accepted: list[torch.Tensor] = []
+    remaining = int(count)
+    for _ in range(1000):
+        batch_size = max(64, remaining * 4)
+        candidates = lower + torch.rand(batch_size, 2, device=device) * (upper - lower)
+        inside = _points_in_polygon(candidates, vertices)
+        if torch.any(inside):
+            selected = candidates[inside][:remaining]
+            accepted.append(selected)
+            remaining -= selected.shape[0]
+            if remaining <= 0:
+                return torch.cat(accepted, dim=0)[:count]
+    raise RuntimeError("Failed to sample enough points inside spawn_polygon_vertices.")
+
+
 def _asset_pos_quat(asset: RigidObject | Articulation) -> tuple[torch.Tensor, torch.Tensor]:
     return asset.data.root_pos_w, asset.data.root_quat_w
 
@@ -259,9 +301,23 @@ class pushing_policy_observation(ManagerTermBase):
 def reset_pushing_scene(
     env: "ManagerBasedEnv",
     env_ids: torch.Tensor,
+    independent_spawn: bool = False,
+    spawn_polygon_vertices: Sequence[float] | Sequence[Sequence[float]] | None = None,
+    object_x_range: tuple[float, float] | None = None,
+    object_y_range: tuple[float, float] | None = None,
+    robot_x_range: tuple[float, float] | None = None,
+    robot_y_range: tuple[float, float] | None = None,
+    robot_yaw_range: tuple[float, float] | None = None,
+    target_x_range: tuple[float, float] | None = None,
+    target_y_range: tuple[float, float] | None = None,
+    target_yaw_range: tuple[float, float] | None = None,
     robot_radius_range: tuple[float, float] = ROBOT_RADIUS_START_RANGE,
     object_xy_range: tuple[float, float] = (-0.5, 0.5),
+    object_yaw_range: tuple[float, float] = (-math.pi, math.pi),
     target_distance_range: tuple[float, float] = TARGET_DISTANCE_START_RANGE,
+    target_angle_range: tuple[float, float] = (-math.pi, math.pi),
+    robot_lateral_range: tuple[float, float] = ROBOT_LATERAL_START_RANGE,
+    robot_yaw_noise_range: tuple[float, float] = ROBOT_YAW_NOISE_START_RANGE,
     robot_cfg: SceneEntityCfg = SceneEntityCfg("robot"),
     object_cfg: SceneEntityCfg = SceneEntityCfg("push_object"),
     target_cfg: SceneEntityCfg = SceneEntityCfg("target_marker"),
@@ -274,30 +330,60 @@ def reset_pushing_scene(
     origins = env.scene.env_origins[env_ids]
     robot_radius_range = getattr(env, "_object_pushing_robot_radius_range", robot_radius_range)
     target_distance_range = getattr(env, "_object_pushing_target_distance_range", target_distance_range)
-    robot_lateral_range = getattr(env, "_object_pushing_robot_lateral_range", ROBOT_LATERAL_START_RANGE)
-    robot_yaw_noise_range = getattr(env, "_object_pushing_robot_yaw_noise_range", ROBOT_YAW_NOISE_START_RANGE)
+    robot_lateral_range = getattr(env, "_object_pushing_robot_lateral_range", robot_lateral_range)
+    robot_yaw_noise_range = getattr(env, "_object_pushing_robot_yaw_noise_range", robot_yaw_noise_range)
     object_heights = getattr(env, "_object_pushing_object_heights", None)
     if object_heights is None:
         object_center_z = torch.full((count, 1), OBJECT_CENTER_Z, device=device)
     else:
         object_center_z = 0.5 * object_heights[env_ids].unsqueeze(1)
 
-    object_xy = torch.empty(count, 2, device=device).uniform_(object_xy_range[0], object_xy_range[1])
-    object_yaw = torch.empty(count, device=device).uniform_(-math.pi, math.pi)
-    target_dist = torch.empty(count, device=device).uniform_(target_distance_range[0], target_distance_range[1])
-    target_angle = torch.empty(count, device=device).uniform_(-math.pi, math.pi)
-    target_dir = torch.stack((torch.cos(target_angle), torch.sin(target_angle)), dim=1)
-    lateral_dir = torch.stack((-torch.sin(target_angle), torch.cos(target_angle)), dim=1)
-    target_xy = object_xy + target_dist.unsqueeze(1) * target_dir
+    object_yaw = torch.empty(count, device=device).uniform_(object_yaw_range[0], object_yaw_range[1])
 
-    robot_radius = torch.empty(count, device=device).uniform_(robot_radius_range[0], robot_radius_range[1])
-    robot_lateral_sample = torch.empty(count, device=device).uniform_(robot_lateral_range[0], robot_lateral_range[1])
-    max_lateral = 0.95 * robot_radius
-    robot_lateral = torch.clamp(robot_lateral_sample, -max_lateral, max_lateral)
-    robot_back_distance = torch.sqrt(torch.clamp(robot_radius.square() - robot_lateral.square(), min=0.0))
-    robot_xy = object_xy - robot_back_distance.unsqueeze(1) * target_dir + robot_lateral.unsqueeze(1) * lateral_dir
-    robot_yaw_noise = torch.empty(count, device=device).uniform_(robot_yaw_noise_range[0], robot_yaw_noise_range[1])
-    robot_yaw = target_angle + robot_yaw_noise
+    if independent_spawn:
+        object_x_range = object_x_range if object_x_range is not None else object_xy_range
+        object_y_range = object_y_range if object_y_range is not None else object_xy_range
+        robot_x_range = robot_x_range if robot_x_range is not None else object_xy_range
+        robot_y_range = robot_y_range if robot_y_range is not None else object_xy_range
+        target_x_range = target_x_range if target_x_range is not None else object_xy_range
+        target_y_range = target_y_range if target_y_range is not None else object_xy_range
+        robot_yaw_range = robot_yaw_range if robot_yaw_range is not None else (-math.pi, math.pi)
+        target_yaw_range = target_yaw_range if target_yaw_range is not None else (-math.pi, math.pi)
+
+        if spawn_polygon_vertices is not None:
+            object_xy = _sample_xy_in_polygon(count, spawn_polygon_vertices, device)
+            robot_xy = _sample_xy_in_polygon(count, spawn_polygon_vertices, device)
+            target_xy = _sample_xy_in_polygon(count, spawn_polygon_vertices, device)
+        else:
+            object_x = torch.empty(count, device=device).uniform_(object_x_range[0], object_x_range[1])
+            object_y = torch.empty(count, device=device).uniform_(object_y_range[0], object_y_range[1])
+            robot_x = torch.empty(count, device=device).uniform_(robot_x_range[0], robot_x_range[1])
+            robot_y = torch.empty(count, device=device).uniform_(robot_y_range[0], robot_y_range[1])
+            target_x = torch.empty(count, device=device).uniform_(target_x_range[0], target_x_range[1])
+            target_y = torch.empty(count, device=device).uniform_(target_y_range[0], target_y_range[1])
+
+            object_xy = torch.stack((object_x, object_y), dim=1)
+            robot_xy = torch.stack((robot_x, robot_y), dim=1)
+            target_xy = torch.stack((target_x, target_y), dim=1)
+        robot_yaw = torch.empty(count, device=device).uniform_(robot_yaw_range[0], robot_yaw_range[1])
+        target_yaw = torch.empty(count, device=device).uniform_(target_yaw_range[0], target_yaw_range[1])
+    else:
+        object_xy = torch.empty(count, 2, device=device).uniform_(object_xy_range[0], object_xy_range[1])
+        target_dist = torch.empty(count, device=device).uniform_(target_distance_range[0], target_distance_range[1])
+        target_angle = torch.empty(count, device=device).uniform_(target_angle_range[0], target_angle_range[1])
+        target_dir = torch.stack((torch.cos(target_angle), torch.sin(target_angle)), dim=1)
+        lateral_dir = torch.stack((-torch.sin(target_angle), torch.cos(target_angle)), dim=1)
+        target_xy = object_xy + target_dist.unsqueeze(1) * target_dir
+
+        robot_radius = torch.empty(count, device=device).uniform_(robot_radius_range[0], robot_radius_range[1])
+        robot_lateral_sample = torch.empty(count, device=device).uniform_(robot_lateral_range[0], robot_lateral_range[1])
+        max_lateral = 0.95 * robot_radius
+        robot_lateral = torch.clamp(robot_lateral_sample, -max_lateral, max_lateral)
+        robot_back_distance = torch.sqrt(torch.clamp(robot_radius.square() - robot_lateral.square(), min=0.0))
+        robot_xy = object_xy - robot_back_distance.unsqueeze(1) * target_dir + robot_lateral.unsqueeze(1) * lateral_dir
+        robot_yaw_noise = torch.empty(count, device=device).uniform_(robot_yaw_noise_range[0], robot_yaw_noise_range[1])
+        robot_yaw = target_angle + robot_yaw_noise
+        target_yaw = torch.zeros(count, device=device)
 
     robot_pos = origins + torch.cat((robot_xy, torch.full((count, 1), BASE_HEIGHT, device=device)), dim=1)
     object_pos = origins + torch.cat((object_xy, object_center_z), dim=1)
@@ -307,8 +393,7 @@ def reset_pushing_scene(
     robot.write_root_velocity_to_sim(torch.zeros(count, 6, device=device), env_ids=env_ids)
     push_object.write_root_pose_to_sim(torch.cat((object_pos, _yaw_quat(object_yaw)), dim=1), env_ids=env_ids)
     push_object.write_root_velocity_to_sim(torch.zeros(count, 6, device=device), env_ids=env_ids)
-    target_quat = _yaw_quat(torch.zeros(count, device=device))
-    target.write_root_pose_to_sim(torch.cat((target_pos, target_quat), dim=1), env_ids=env_ids)
+    target.write_root_pose_to_sim(torch.cat((target_pos, _yaw_quat(target_yaw)), dim=1), env_ids=env_ids)
     target.write_root_velocity_to_sim(torch.zeros(count, 6, device=device), env_ids=env_ids)
 
 
