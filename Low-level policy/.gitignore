@@ -1,0 +1,8 @@
+# Training/runtime artifacts
+/logs/
+/outputs/
+/.codex
+
+# Python cache artifacts
+__pycache__/
+*.py[cod]

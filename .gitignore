@@ -3,6 +3,12 @@ VR-Robo-main/vrrobo_isaaclab/logs/
 VR-Robo-main/vrrobo_isaaclab/outputs/
 Object_Pushing/logs/
 Object_Pushing/vla_push_dataset/
+NaVILA-main/
+
+Low-level policy/.git/
+Low-level policy/logs/
+Low-level policy/outputs/
+Low-level policy/.codex
 
 VR-Robo-main/vrrobo_renderer/vr-robo-dataset.zip
 VR-Robo-main/vrrobo_renderer/vr-robo-dataset/

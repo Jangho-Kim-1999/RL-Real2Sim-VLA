@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="Quad_v2_serial">
+
+  <!-- floating base root link -->
+  <!-- <link name="root"/>
+
+  <joint name="root_joint" type="floating">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="root"/>
+    <child  link="base_link"/>
+  </joint> -->
+
+  <!-- body / torso -->
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="1.7347E-16 -1.8398E-07 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="6.9995" />
+      <inertia
+        ixx="0.01464"
+        ixy="5.4195E-18"
+        ixz="1.6083E-11"
+        iyy="0.015598"
+        iyz="1.7459E-06"
+        izz="0.02176" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link
+    name="FL_torso">
+    <inertial>
+      <origin
+        xyz="-0.0017334 0.06549 0.00013067"
+        rpy="0 0 0" />
+      <mass
+        value="3.1625" />
+      <inertia
+        ixx="0.0028313"
+        ixy="-0.0001469"
+        ixz="-3.4247E-06"
+        iyy="0.0039556"
+        iyz="2.6377E-06"
+        izz="0.0030673" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FL_torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FL_torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FLHAA"
+    type="revolute">
+    <origin
+      xyz="0.238000000000001 0.065 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FL_torso" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.523"
+      upper="0.523"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link
+    name="FL_thigh">
+    <inertial>
+      <origin
+        xyz="-0.0391616693032044 0.000177795724465746 0.000220389083632255"
+        rpy="0 0 0" />
+      <mass
+        value="0.696894322580009" />
+      <inertia
+        ixx="9.29741429211785E-05"
+        ixy="-1.8300551054218E-05"
+        ixz="1.99901905749035E-06"
+        iyy="0.00262072448455835"
+        iyz="-8.43072992746681E-08"
+        izz="0.00254448123433226" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FL_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FL_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FLHIP"
+    type="revolute">
+    <origin
+      xyz="0 0.0745 0"
+      rpy="0 0 0" />
+    <parent
+      link="FL_torso" />
+    <child
+      link="FL_thigh" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.785"
+      upper="2.355"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link
+    name="FL_shank">
+    <inertial>
+      <origin
+        xyz="-0.0963115764240588 -2.20984575083349E-09 -9.11827297001011E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.351659768601878" />
+      <inertia
+        ixx="2.77984029187582E-05"
+        ixy="-7.20970075117808E-12"
+        ixz="-3.22783302095695E-11"
+        iyy="0.000728223673807071"
+        iyz="8.06110293530347E-12"
+        izz="0.000713123130248547" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FL_shank.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FL_shank.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FLKNEE"
+    type="revolute">
+    <origin
+      xyz="-0.25 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="FL_thigh" />
+    <child
+      link="FL_shank" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0.785"
+      upper="2.355"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link name="FL_foot">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="FL_foot_joint" type="fixed">
+    <parent link="FL_shank"/>
+    <child link="FL_foot"/>
+    <origin xyz="-0.25 0 0" rpy="0 0 0"/> 
+  </joint>
+
+
+
+
+
+  
+
+
+
+  <link 
+    name="FR_torso">
+    <inertial>
+      <origin
+        xyz="-0.00173344458362548 -0.0654895246753241 -0.000130669275980405"
+        rpy="0 0 0" />
+      <mass
+        value="3.1624510690856" />
+      <inertia
+        ixx="0.00283126529421992"
+        ixy="0.000146903648810555"
+        ixz="3.42471673672494E-06"
+        iyy="0.00395563066180612"
+        iyz="2.63769703692205E-06"
+        izz="0.00306730888392595" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FR_torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FR_torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FRHAA"
+    type="revolute">
+    <origin
+      xyz="0.238000000000001 -0.065 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FR_torso" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.523"
+      upper="0.523"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link
+    name="FR_thigh">
+    <inertial>
+      <origin
+        xyz="-0.0383497073548005 -0.000168147539236163 0.000227414839670537"
+        rpy="0 0 0" />
+      <mass
+        value="0.689237482684943" />
+      <inertia
+        ixx="9.23910845821613E-05"
+        ixy="1.74746938609356E-05"
+        ixz="2.74242977690726E-06"
+        iyy="0.00256312874019402"
+        iyz="8.10067876480892E-08"
+        izz="0.00248723395076293" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FR_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FR_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FRHIP"
+    type="revolute">
+    <origin
+      xyz="0 -0.0745 0"
+      rpy="0 0 0" />
+    <parent
+      link="FR_torso" />
+    <child
+      link="FR_thigh" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.785"
+      upper="2.355"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link
+    name="FR_shank">
+    <inertial>
+      <origin
+        xyz="-0.0963115764270899 2.20984519572198E-09 9.11817438220552E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.351659768601879" />
+      <inertia
+        ixx="2.77984029187583E-05"
+        ixy="7.20970078453484E-12"
+        ixz="3.2278330202766E-11"
+        iyy="0.000728223673807071"
+        iyz="8.06110299913697E-12"
+        izz="0.000713123130248547" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FR_shank.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/FR_shank.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FRKNEE"
+    type="revolute">
+    <origin
+      xyz="-0.25 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="FR_thigh" />
+    <child
+      link="FR_shank" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0.785"
+      upper="2.355"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+
+  <link name="FR_foot">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="FR_foot_joint" type="fixed">
+    <parent link="FR_shank"/>
+    <child link="FR_foot"/>
+    <origin xyz="-0.25 0 0" rpy="0 0 0"/> 
+  </joint>
+
+
+  <link
+    name="RL_torso">
+    <inertial>
+      <origin
+        xyz="0.00937048353092204 0.0666614554153487 -0.000109953717277289"
+        rpy="0 0 0" />
+      <mass
+        value="3.1010687540016" />
+      <inertia
+        ixx="0.00305932204653624"
+        ixy="0.000153885206183802"
+        ixz="-7.31180671271563E-06"
+        iyy="0.00365733479057186"
+        iyz="-2.12946156488488E-06"
+        izz="0.00307743848137532" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RL_torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RL_torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RLHAA"
+    type="revolute">
+    <origin
+      xyz="-0.239000000000001 0.065 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RL_torso" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.523"
+      upper="0.523"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link
+    name="RL_thigh">
+    <inertial>
+      <origin
+        xyz="-0.0390610258431862 0.00017779420790634 0.000220389086703049"
+        rpy="0 0 0" />
+      <mass
+        value="0.696894322580009" />
+      <inertia
+        ixx="9.29741429211741E-05"
+        ixy="-1.83005510542172E-05"
+        ixz="2.83712146601345E-06"
+        iyy="0.00262072448455835"
+        iyz="-8.43088671074908E-08"
+        izz="0.00254448123433226" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RL_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RL_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RLHIP"
+    type="revolute">
+    <origin
+      xyz="0 0.0745 0"
+      rpy="0 0 0" />
+    <parent
+      link="RL_torso" />
+    <child
+      link="RL_thigh" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.785"
+      upper="2.355"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link
+    name="RL_shank">
+    <inertial>
+      <origin
+        xyz="-0.0963115764240549 2.20984455734374E-09 9.11864750374747E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.351659768601878" />
+      <inertia
+        ixx="2.77984029187582E-05"
+        ixy="7.2097010350518E-12"
+        ixz="3.22783299210672E-11"
+        iyy="0.000728223673807071"
+        iyz="8.06110289581437E-12"
+        izz="0.000713123130248546" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RL_shank.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RL_shank.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RLKNEE"
+    type="revolute">
+    <origin
+      xyz="-0.25 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RL_thigh" />
+    <child
+      link="RL_shank" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0.785"
+      upper="2.355"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+
+
+  <link name="RL_foot">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="RL_foot_joint" type="fixed">
+    <parent link="RL_shank"/>
+    <child link="RL_foot"/>
+    <origin xyz="-0.25 0 0" rpy="0 0 0"/> 
+  </joint>
+
+
+  <link
+    name="RR_torso">
+    <inertial>
+      <origin
+        xyz="0.00937048353092215 -0.0666614554153486 0.000109953717278649"
+        rpy="0 0 0" />
+      <mass
+        value="3.1010687540016" />
+      <inertia
+        ixx="0.00305932204653623"
+        ixy="-0.0001538852061838"
+        ixz="7.31180671270219E-06"
+        iyy="0.00365733479057186"
+        iyz="-2.12946156488573E-06"
+        izz="0.00307743848137532" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RR_torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RR_torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRHAA"
+    type="revolute">
+    <origin
+      xyz="-0.239000000000001 -0.065 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RR_torso" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.523"
+      upper="0.523"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link
+    name="RR_thigh">
+    <inertial>
+      <origin
+        xyz="-0.0384514688772392 -0.000168146005829456 0.000227414839901074"
+        rpy="0 0 0" />
+      <mass
+        value="0.689237482684943" />
+      <inertia
+        ixx="9.23910845821176E-05"
+        ixy="1.74746938609332E-05"
+        ixz="1.90432733044917E-06"
+        iyy="0.00256312874019402"
+        iyz="8.10083558021764E-08"
+        izz="0.00248723395076297" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RR_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RR_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRHIP"
+    type="revolute">
+    <origin
+      xyz="0 -0.0745 0"
+      rpy="0 0 0" />
+    <parent
+      link="RR_torso" />
+    <child
+      link="RR_thigh" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.785"
+      upper="2.355"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link
+    name="RR_shank">
+    <inertial>
+      <origin
+        xyz="-0.0963115764255815 2.2098482488353E-09 9.11670142156318E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.351659768601878" />
+      <inertia
+        ixx="2.77984029187582E-05"
+        ixy="7.20970047194728E-12"
+        ixz="3.22783357520922E-11"
+        iyy="0.00072822367380707"
+        iyz="8.06110300573034E-12"
+        izz="0.000713123130248546" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RR_shank.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="./assets/meshes/RR_shank.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RRKNEE"
+    type="revolute">
+    <origin
+      xyz="-0.25 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RR_thigh" />
+    <child
+      link="RR_shank" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0.785"
+      upper="2.355"
+      effort="60"
+      velocity="20.4" />
+  </joint>
+
+  <link name="RR_foot">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.01"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="RR_foot_joint" type="fixed">
+    <parent link="RR_shank"/>
+    <child link="RR_foot"/>
+    <origin xyz="-0.25 0 0" rpy="0 0 0"/> 
+  </joint>
+
+
+  
+</robot>
